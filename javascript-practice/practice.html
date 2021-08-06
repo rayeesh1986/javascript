@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <script>
+
+        // callback
+        function a(a) {
+            setTimeout(() => {
+                console.log(a)
+                b(a)
+            }, 2000)
+        }
+
+        function b(d) {
+            setTimeout(() => {
+                console.log(`${d} value get`)
+            }, 2000)
+        }
+
+        a("rayeesh")
+
+
+        const a1 = (name, callback) => {
+            console.log(callback)
+            console.log(`My Friend is ${name}.`);
+            callback(name);
+        }
+
+        const a2 = (n) => {
+            console.log(`and ${n} is a good boy.`)
+        }
+
+        a1("Rayeesh", a2)
+
+
+
+        // function curring
+        function a4(num) {
+            console.log(num)
+            return numb => {
+                return numb * num
+            }
+        }
+
+        m1 = a4(5)
+
+        console.log(m1(2))
+        console.log(m1(3))
+        console.log(m1(4))
+
+    </script>
+</body>
+
+</html>

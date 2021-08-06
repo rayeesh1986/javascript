@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Closure</h1>
+    <p>A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s
+        variables — a scope chain.</p>
+    <p>The closure has three scope chains:</p>
+    <ul>
+        <li>it has access to its own scope — variables defined between its curly brackets</li>
+        <li>it has access to the outer function’s variables</li>
+        <li>it has access to the global variables</li>
+    </ul>
+
+    <script>
+        function m() {
+            let a = 10;
+            function b() {
+                const c = a + 5;
+                console.log(c)
+            }
+
+            return b;
+        }
+        // console.dir(m())
+
+
+        function nn() {
+            var v = "hi rayeesh";
+
+            return function () {
+                console.log(`Hello world ${v}`)
+            }
+        }
+
+        //  console.dir(nn())
+
+
+
+
+
+        function cls() {
+            let a = 10;
+            let c = function () {
+                console.log(a)
+            }
+
+            c();
+        }
+        //result = cls();
+
+        console.log(cls());
+
+
+        console.log("hi")
+        function bb() {
+            let a = 20;
+            function cc() {
+                console.log(a)
+            }
+            return cc;
+        }
+
+        reslt = bb();
+
+        reslt()
+
+
+
+
+    </script>
+</body>
+
+
+<style>
+    .env_left_img {
+        float: left;
+        padding: 10px 30px 30px 0;
+        width: 50%;
+    }
+
+    .env_left_img img {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .env_left_img {
+            float: none;
+            padding: 10px 0px 20px 0;
+            width: 100%;
+        }
+    }
+</style>
+
+</html>

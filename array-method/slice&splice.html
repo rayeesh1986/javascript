@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <h1>Slice</h1>
+
+    <pre>
+        let a = ["css", "html", "php", "js", "phyton"];
+        // slice(start, end) (end not included) 
+        let f = a.slice(1, 3);
+        console.log(f);
+
+
+        let b = ["css", "html", "php", "js", "phyton"];
+        // slice(start, end) (end not included) 
+        let c = b.slice(1, -2);
+
+        console.log(c);
+        console.log(b)
+
+        The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) 
+        where start and end represent the index of items in that array. The original array will not be modified.
+
+        Optional. An integer that specifies where to start the selection (The first element has an index of 0). 
+        Use negative numbers to select from the end of an array. If omitted, it acts like "0"
+
+    </pre>
+
+
+    <h1>Splice</h1>
+
+    <pre>
+        const months = ['Jan', 'March', 'April', 'June'];
+        months.splice(2, 0, 'Feb',"fdffd");
+        // inserts at index 1
+        console.log(months);
+        // expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+        months.splice(4, 1, 'May');
+        // replaces 1 element at index 4
+        console.log(months);
+        // expected output: Array ["Jan", "Feb", "March", "April", "May"]
+       
+        The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements
+    </pre>
+
+    <script>
+
+        // Slice array example start 
+        let a = ["css", "html", "php", "js", "phyton"];
+        // slice(start, end) (end not included) 
+        // you can use 
+        // slice(start)
+        // slice(start, end)
+        let f = a.slice(1, 3);
+        console.log(f);
+
+
+        let b = ["css", "html", "php", "js", "phyton"];
+        // slice(start, end) (end not included) 
+        let c = b.slice(1, -2);
+
+        console.log(c);
+        console.log(b)
+        // Slice end
+
+
+
+
+        // Splice array example start 
+        const months = ['Jan', 'April', 'May', 'May'];
+        // splice(index, howmany delete, add new value)
+        // howmany delete is optional value
+        months.splice(1, 0, 'Feb', "March");
+        // inserts at index 1
+        console.log(months);
+        // expected output: Array ["Jan", "Feb", "March", "April", "May", "May"]
+
+        months.splice(5, 1, 'June', 'July', 'August');
+        // replaces 1 element at index 4
+        console.log(months);
+        // expected output: Array ["Jan", "Feb", "March", "April", "May", "June", "July", "August"]
+        // Splice end
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

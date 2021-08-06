@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <h1>Practice</h1>
+
+
+
+    <script>
+
+        let arr = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+
+        // duplicate data
+        /*  let m = []
+         for (var i = 0; i < arr.length; i++) {
+            if (!m.includes(arr[i])) {
+                m.push(arr[i]);
+            }
+        }
+        console.log(m) */
+
+        // duplicate data
+        /* function removeData(data) {
+           return data.reduce((a, b) => a.includes(b) ? a : [...a, b], [])
+       }
+       console.log(removeData(arr)) */
+
+        // duplicate data
+        /* function removeData(data) {
+            return data.filter((value, index) => data.indexOf(index) !== value)
+        }
+        console.log(removeData(arr)) */
+
+        // duplicate data
+        /* function duplicateData(data) {
+            return [...new Set(data)]
+        }
+        console.log(duplicateData(arr)) */
+
+        x = []
+        arr.filter(function (el, i) {
+            if (!x.includes(el)) {
+                return x.push(el)
+            }
+        })
+
+        //console.log(x)
+
+
+
+
+
+        /* const array2 = [1, 2, 3, 4, 20];
+        const sum = array2.reduce(function (accum, currentVal, index, array) {
+            return array[index] = currentVal * 2;
+        })
+        console.log(array2) */
+
+        const array2 = [1, 2, 3, 4, 20];
+        /* const sum = array2.reduce(function (accum, currentVal, index, array) {
+            //debugger;
+            if ((currentVal % 2) === 0) {
+                //return array[index] = currentVal*2;
+                console.log(false)
+            } else {
+                console.log(true)
+            }
+        })
+        console.log(array2) */
+
+
+        // get even odd value in a array
+        const a2 = [1, 2, 3, 4, 20];
+        let b = [];
+        let c = [];
+        a2.forEach(function (a) {
+            if (a % 2 === 0) {
+                // console.log("true", b);
+                return b.push(a)
+            } else {
+                //console.log("false")
+                return c.push(a)
+            }
+        });
+
+        console.log(b);
+        console.log(c);
+
+        // output 1
+        var y = 1;
+        if (function F() {
+
+        }) {
+            y += typeof F;
+            console.log(typeof F)
+        }
+        console.log(y);
+
+        // result get 0 because pop will array1 value 0 kar dega
+        var array1 = [1, 22, 24, 46];
+        while (array1.length > 0) {
+            array1.pop();
+        }
+        console.log(array1, "test")
+
+
+        // get max value in array
+        var a1 = [1, 22, 24, 46];
+        console.log(Math.max(...a1))
+
+        // get max length and max word in string
+        var str = "hello my name is rayeesh Alam nasereen fatima kumarrakesh";
+        y = str.split(' ')
+        var maxVal = 0;
+        var maxName;
+        for (var i = 0; i < y.length; i++) {
+            if (y[i].length > maxVal) {
+                maxVal = y[i].length;
+                maxName = y[i];
+            }
+        }
+
+        console.log(maxName)
+        console.log(maxVal)
+
+
+        function a() {
+            var bb = 2222222222
+            function cc() {
+                let m = 333333;
+                bb = 666666666
+                console.log(m, bb)
+            }
+            console.log(bb, "sddas")
+            return cc();
+        }
+
+
+        a();
+
+
+
+
+    </script>
+</body>
+
+</html>

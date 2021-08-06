@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- external -->
+    <!--  <script src="custom.js"></script> -->
+</head>
+
+<body>
+
+    <h1>Shallow copy vs Deep copy</h1>
+
+</body>
+
+<script>
+
+    // ye obj ke reference ko copy karta hai and we can add more obj when it is coping ye obj me change nahi karta hai isko shallow copy kahte hai
+
+    let a = {
+        name: "Rayeesh Alam",
+        degree: "MBA",
+        class: "MBA"
+    }
+
+    let b = {
+        name: "Rayeesh Alam",
+        degree: "MBA",
+        class: {
+            high: "2004",
+            inter: "2006",
+            graduation: {
+                ba: "2008",
+                ma: "2011"
+            }
+        }
+    }
+
+    // shallow copy
+    //a.name = "radha";
+    let c = Object.assign({ city: "Delhi" }, a)
+    c.name = "rajnish"
+    console.log(a)
+    console.log(c)
+
+    // Deep copy
+    let e = JSON.stringify(b);
+    let f = JSON.parse(e);
+
+    let d = Object.assign({}, f)
+    d.class.graduation.ba = "2323232323";
+    console.log(b)
+    console.log(d)
+
+</script>
+
+</html>

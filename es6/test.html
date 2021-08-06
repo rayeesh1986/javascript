@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <h1>This</h1>
+    <p>The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is
+        used: ... In a function, this refers to the global object. In a function, in strict mode, this is undefined . In
+        an event, this refers to the element that received the event.</p>
+
+
+    <script>
+        'strict mode';
+
+
+        function a1() {
+            console.log(this)
+        }
+        // a1()
+
+        let newobj = {
+            name: "Manzar",
+            company: "Envigo",
+            mfun: function () {
+                // return `my Name is ${this.name} and company ${this.company}`;
+                console.log(this)
+            },
+            mfun2: (obj) => {
+                return (`${obj.name} ============ ${obj.company}`);
+            }
+        }
+        //const n = newobj.mfun2(newobj)
+        console.log(newobj.mfun());
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

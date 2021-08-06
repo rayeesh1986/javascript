@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <h1>Var, Let, Const</h1>
+
+
+    <script async defer>
+        /* var */
+        /* var x = "rayeesh";
+        x = "Alam";
+        console.log(x) */
+
+
+        /* let */
+        /* let x = "rayeesh 2";
+        x = "Alam 2";
+        console.log(x) */
+
+
+        /* const */
+        /* const x = "rayeesh 3";
+        x = "Alam 3";
+        console.log(x) */
+        // it will through that error because it is const value it can't be changed.
+
+
+        /*
+        function myFunc(xyz) {// here is start function scope
+
+            if (xyz) { // here is start block scope
+                const x = "Hello";
+                let y = "world";
+                var z = "second world";
+
+                console.log("my name is" + " " + x + " " + y)
+
+                // here is end block scope
+            }
+
+            console.log(z)
+
+
+            
+            // console.log(x)
+            // console.log(y)
+            //  x and y will be giving us error here because it is block scope
+            
+
+
+
+
+            // here is end function scope
+        }
+
+        myFunc(true) */
+        var a = "china";
+        function c() {
+            a = "india";
+
+            if (a) {
+                a = "nepal"
+                console.log(a);
+                let b = "pakistan";
+                console.log(b);
+            }
+
+            console.log(a);
+        }
+        c();
+        a = "bhutan";
+
+        console.log(window);
+
+
+        let a1 = "india";
+
+        if (true) {
+            let a1 = "bangal";
+            console.log(a1)
+        }
+
+        console.log(a1)
+
+
+
+
+
+        //global scope
+        let aw = 10;
+        let x = true;
+        const mm = 20;
+
+        console.log(aw + " this " + mm)
+
+        // local scope
+        function bw() {
+            // function scope
+            const mm = 30;
+            let aw = 8;
+            aw = aw + 1;
+            console.log(aw + " that " + mm);
+            if (true) {
+                // block scope
+                let aw = 5;
+                console.log(aw + "========================= " + mm)
+            }
+
+            console.log(aw + " that " + mm);
+        }
+        bw();
+
+
+        if (x) {
+            // block scope
+            let aw = 5;
+            console.log(aw + " " + mm)
+        }
+
+        // var aw = 30;
+        console.log(aw + " final " + mm)
+
+
+
+
+
+        let bb = [1, 2, 3, 4, 5, 6, 7]
+
+
+        function yy(i, v) {
+            console.log(i + "========" + v)
+        }
+
+        bb.forEach(yy);
+
+        let obj = {
+            aa: 10,
+            dd: function () {
+                console.log(this.aa)
+            },
+            cc: (obj) => {
+                console.log(obj.aa)
+            }
+        }
+
+        obj.dd();
+        obj.cc(obj);
+
+
+
+
+        console.log("=============================================")
+        var abc = "hello";
+
+        const cd = () => {
+            var dd = 100;
+            var cc = true;
+            if (cc) {
+                let ee = 12;
+                console.log(dd);
+            }
+            // console.log(ee)
+            console.log(abc);
+        }
+        cd();
+
+        let vv = 10;
+
+        function cv() {
+            vv = 20;
+
+            if (vv) {
+                vv = 30;
+                console.log(vv)
+                cc = 60;
+                vv = 70
+
+            }
+            console.log(vv)
+        }
+
+        cv()
+
+
+
+
+    </script>
+</body>
+
+</html>

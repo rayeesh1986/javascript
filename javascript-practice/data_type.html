@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <pre>
+
+        Value	        Becomes…
+        undefined	    NaN
+        null	        0
+        true and false	1 and 0
+        string	Whitespaces from the start and end are removed. If the remaining string is empty, the result is 0. Otherwise, the number is “read” from the string. An error gives NaN.
+        typeof undefined // "undefined"
+
+
+        alert( Number("   123   ") ); // 123
+        alert( Number("123z") );      // NaN (error reading a number at "z")
+        alert( Number(true) );        // 1
+        alert( Number(false) );       // 0
+
+        alert( Boolean(1) ); // true
+        alert( Boolean(0) ); // false
+        alert( Boolean("hello") ); // true
+        alert( Boolean("") ); // false
+        alert( Boolean("0") ); // true
+        alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
+
+
+        typeof 0 // "number"
+        
+        typeof 10n // "bigint"
+        
+        typeof true // "boolean"
+        
+        typeof "foo" // "string"
+        
+        typeof Symbol("id") // "symbol"
+        
+        typeof Math // "object"  (1)
+        
+        typeof null // "object"  (2)
+        
+        typeof alert // "function"  (3)
+
+
+
+        Summary
+            There are 8 basic data types in JavaScript.
+
+            number for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
+            bigint is for integer numbers of arbitrary length.
+            string for strings. A string may have zero or more characters, there’s no separate single-character type.
+            boolean for true/false.
+            null for unknown values – a standalone type that has a single value null.
+            undefined for unassigned values – a standalone type that has a single value undefined.
+            object for more complex data structures.
+            symbol for unique identifiers.
+        </pre>
+
+
+    <pre>
+
+        1 = Primitive Datatypes are 1. Number 2. String 3. Boolean 4. Undefined 5. Null
+        2 = Non-Primitive Datatypes are 1.Object 2.Array 3.RegExp
+
+        A variable can hold one of two value types: primitive values or reference values.
+
+        Primitive values are data that are stored on the stack.
+        Primitive value is stored directly in the location that the variable accesses.
+        Reference values are objects that are stored in the heap.
+        Reference value stored in the variable location is a pointer to a location in memory where the object is stored.
+        Primitive types include Undefined, Null, Boolean, Number, or String.
+    </pre>
+
+
+
+    <script>
+
+        typeof undefined // "undefined"
+
+        typeof 0 // "number"
+
+        typeof 10n // "bigint"
+
+        typeof true // "boolean"
+
+        typeof "foo" // "string"
+
+        typeof Symbol("id") // "symbol"
+
+        typeof Math // "object"  (1)
+
+        typeof null // "object"  (2)
+
+        typeof alert // "function"  (3)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+
+    <input type="text" id="abc">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <h1>Class Object and function Object, call, apply, bind</h1>
+    <div id="demo">test</div>
+    <script>
+
+        class Students {
+            constructor(nameData, ageData, classData) {
+                this.getName = nameData;
+                this.getAge = ageData;
+                this.getClass = classData;
+            }
+            //instance method
+            // static me data ko inherit nahi kar sakte
+            bioData() {
+                //console.log(`Hi i am ${this.getName}, age is ${this.getAge} and my class ${this.getClass}`)
+                return `Hi i am ${this.getName}, age is ${this.getAge} and my class ${this.getClass}`;
+            }
+        }
+
+        class Abc extends Students {
+            constructor(nameData, ageData, classData, game, dance) {
+                super(nameData, ageData, classData);
+                this.getGame = game;
+                this.getDance = dance
+            }
+            my_boi() {
+                return `${super.bioData()} and my hobbies is playing ${this.getGame} and ${this.getDance}`;
+            }
+        }
+
+        class Def extends Abc {
+            constructor(nameData, ageData, classData, game, dance, getBookreader) {
+                super(nameData, ageData, classData, game, dance);
+                this.getBookreader = getBookreader;
+                //this.constructor.bio()
+            }
+            other_bio() {
+                return (`${super.my_boi()} added on more hobby ${this.getBookreader}`)
+            }
+        }
+
+        /*  Def.bio = function () {
+             return `hi Data i am testing just static instance`;
+         } */
+
+        const x = new Def('Rayeesh', '34', 'MCA', 'Cricket', 'Break Dance', 'Book Reader');
+        const x1 = new Def('Rayeesh_1', '34_1', 'MCA_1', 'Cricket_1', 'Break Dance_1', 'Book Reader_1');
+        // now we can create multiple objects
+        console.log(x)
+        console.log(x1)
+        // console.log(Def.bio())
+
+        document.getElementById('demo').innerHTML = `my name ${x.getName} & ${x1.other_bio()}`;
+
+        function xy() {
+            let m = 10;
+
+            function b() {
+                let b = m + 20;
+                console.log(b)
+                return b;
+            }
+            return b;
+        }
+
+        console.dir(xy());
+
+
+
+        var add = function () {
+            var counter = 0;
+            return function () { counter += 1; return counter; }
+        }
+        console.dir(add());
+
+        /* const vv = function () {
+            var foo;
+            foo = 0;
+            function MyClass() {
+                foo += 1;
+            }
+            MyClass.prototype = {
+                howMany: function () {
+                    return foo;
+                }
+            };
+            window.MyClass = MyClass;
+        }
+
+        console.dir(vv) */
+
+        /* function outer() {
+            var b = 10;
+            function inner() {
+
+                var a = 20;
+                console.log(a + b);
+            }
+            return inner;
+        }
+
+        console.log(outer())
+ */
+
+
+
+
+        //function class method
+
+        var mobile = function (model, price) {
+            this.modelname = model;
+            this.price = price;
+            this.cellingprice = function () {
+                return (`my mobile model name is ${this.modelname}`);
+            }
+        }
+
+        const a = new mobile("Sumsung", 5000)
+
+        class abc {
+            constructor(getName, getEducation, getSalary) {
+                this.name = getName;
+                this.education = getEducation;
+                this.salary = getSalary
+            }
+            h1() {
+                return `This is my name ${this.name} and my education ${this.education} added here`;
+            }
+        }
+
+        class StudentsData extends abc {
+            constructor(getName, getEducation, getSalary, getCity, getState) {
+                super(getName, getEducation, getSalary);
+                this.city = getCity;
+                this.state = getState;
+            }
+            h2() {
+                return `${super.h1()} == ${this.city} === ${this.state}`;
+            }
+
+        }
+
+        const a1 = new abc("Rayeesh", 'PHD', 40000);
+        const a2 = new StudentsData("Rayeesh", 'PHD', 40000, 'Delhi', 'Delhi')
+        console.log(a2);
+
+        console.log("========================================================================");
+        console.log("class in javascript");
+        class dd {
+            constructor(company, model) {
+                this.com = company;
+                this.mod = model;
+            }
+            gg() {
+                return (`Hello my phone is ${this.com} and model no is ${this.mod}`);
+            }
+        }
+
+        class hh extends dd {
+            constructor(company, model, battery) {
+                super(company, model);
+                this.bat = battery;
+            }
+
+            jj() {
+                return (`${super.gg()} and battery ${this.bat}`)
+            }
+        }
+
+        const ff = new dd("Nokia", 3315);
+        const ii = new hh("Nokia", 4510, 6000);
+
+        console.log(ff.gg());
+        console.log(ii.jj());
+
+        console.log("========================================================================");
+
+        console.log("function object in javascript")
+        // this is also call a constructor function
+        function b2(company, model, year) {
+            this.com = company;
+            this.mod = model;
+            this.year = year
+            this.b4 = function () {
+                return (`Hello my phone is ${company} and model no is ${model} and launch ${this.year}`);
+            }
+        }
+
+        b2.prototype.b5 = function (prefix, prefix2) {
+            return `${prefix} == ${this.b4()} ========== ${this.com} says hello. == ${prefix2}`;
+        }
+
+        let b3 = new b2("Samsung", 4500, 2020)
+
+        console.log(b3.b4())
+        console.log(b3.b5("abc", "xyz"))
+
+        console.log("========================================================================");
+
+
+        console.log("function object with call, apply, bind in javascript")
+        function c2(company, model, year) {
+            this.com = company;
+            this.mod = model;
+            this.year = year
+            this.c4 = function () {
+                return (`Hello my phone is ${company} and model no is ${model} and launch ${this.year}`);
+            }
+        }
+
+        let c5 = function (prefix, prefix2) {
+            console.log(`${prefix} == ${this.c4()} ========== ${this.com} says hello. == ${prefix2}`);
+        }
+
+
+        let c7 = function (prefix, prefix2, prefix3, prefix4) {
+            console.log(`${prefix} is a perameter == ${this.c4()} ========== ${this.com} says hello. == ${prefix2} == ${prefix3} == ${prefix4}`);
+        }
+
+        let c3 = new c2("Samsung", 4500, 2020);
+        let c6 = new c2("Nokia", 3315, 2015);
+        let c8 = new c2("Realme", 5500, 2019)
+
+        // call me kis fun me apply karna hai this(object) ko and isme parameters in string me pass karte hai.
+        c5.call(c3, "abc", "xyz")
+        // apply me kis fun me apply karna hai this(object) ko and isme parameters in array me pass karte hai.  
+        c7.apply(c6, ["abc", "xyz", "def", "ghi"])
+
+
+        //function ko bind karke function ko ek var me store kaete hai then usko use karte hai
+        let c9 = c7.bind(c8);
+        c9("abc", "xyz", "def", "ghi")
+
+        console.log("========================================================================");
+
+
+
+
+        //function object
+        function emp_stu(fname, lname) {
+            let detail = {
+                firstname: fname,
+                lastname: lname,
+                getFullname: function () {
+                    return `My full name is ${this.firstname} ${this.lastname}`
+                },
+                getFullname2: (obj) => {
+                    console.log(this);
+                    console.log(obj)
+                    return `it is created by arrow function My full name is ${obj.firstname} ${obj.lastname}`
+                }
+            }
+            return detail;
+        }
+        let bb = emp_stu("Rayeesh", "Alam");
+        console.log(bb.getFullname());
+        console.log(bb.getFullname2(bb));
+
+
+
+
+
+
+        var as = 30
+
+        function rr() {
+            console.log(as);
+            var as = 50;
+            console.log(as);
+
+        }
+
+        rr()
+
+
+        console.log("========================================================================");
+        // class base object
+        class aa1 {
+            // prototype member
+            constructor(modelname, model) {
+                this.modelname = modelname;
+                this.model = model;
+            }
+            aa2() {
+                return (`my mobile ${this.modelname} and model ${this.model}`)
+            }
+        }
+
+        // prototype inheritance
+        class aa4 extends aa1 {
+            constructor(modelname, model, year) {
+                super(modelname, model)
+                this.year = year;
+            }
+
+            aar() {
+                return (`${this.aa2()} and year = ${this.year}`)
+            }
+        }
+
+        const aa3 = new aa1("Nokia", "c5615")
+        const aa5 = new aa4("Nokia", "c5615", "2019")
+        const aa6 = new aa4("Samsund", "1254", "2020")
+
+
+        console.log(aa3.aa2())
+        console.log(aa5.aar())
+        console.log(aa6.aar())
+
+
+        console.log("========================================================================");
+        // function base object
+
+        function bb1(name, model) {
+            this.name = name;
+            this.model = model;
+        }
+
+        function bb2(tvname, tvmodel) {
+            this.name = tvname;
+            this.model = tvmodel;
+        }
+
+
+        const bb3 = function (prefix, prefix1) {
+            return (`${prefix} my mob name ${this.name} and model = ${this.model} ${prefix1}`)
+        }
+        const bb4 = new bb1("Nokia", "c5615");
+        const bb5 = new bb2("Samsund tv", "9155")
+
+
+        /* const bb6 = bb3.call(bb5, "hello", "how are you?")
+        const bb8 = bb3.apply(bb5, ["hello", "how are you?"])
+        console.log(bb8) */
+
+        const bb9 = bb3.bind(bb5);
+
+        console.log(bb9("Abc", "Bcd"))
+
+
+
+
+    </script>
+</body>
+
+</html>

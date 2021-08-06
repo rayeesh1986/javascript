@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <h1>Fat Arrow</h1>
+    <p>The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is
+        used: ... In a function, this refers to the global object. In a function, in strict mode, this is undefined . In
+        an event, this refers to the element that received the event.</p>
+
+
+    <script>
+
+        //"use strict";
+
+        function a() {
+            console.log(this)
+        }
+        a();
+
+        var b1 = {
+            name: "Rishi b1",
+            showName: function () {
+                console.log(this.name)
+            }
+        }
+        b1.showName();
+
+        var b2 = {
+            name: "Rishi b2",
+            showName() {
+                console.log(this.name)
+            }
+        }
+        b2.showName();
+
+        var b3 = {
+            name: 'Rishi b3',
+            tasks: ['transform', 'eat cake', 'blow kisses'],
+            showName: function () {
+                this.tasks.forEach(function (task) {
+                    console.log("== wants to " + task);
+                    console.log(typeof (this.name))
+                    console.log(this.name)
+                });
+            }
+        }
+        b3.showName();
+
+
+        var b4 = {
+            name: 'Rishi b4',
+            tasks: ['transform', 'eat cake', 'blow kisses'],
+            showName: function () {
+                var _this = this;
+                this.tasks.forEach(function (task) {
+                    console.log(_this);
+                });
+            }
+        }
+        b4.showName();
+
+
+        var b5 = {
+            name: 'Rishi b5',
+            tasks: ['transform', 'eat cake', 'blow kisses'],
+            showName: () => {
+                console.log(this.tasks)
+            }
+        }
+        b5.showName();
+
+
+
+
+        let obj = {
+            name: "Rayeesh",
+            company: "Envigo",
+            func1: function () {
+                console.log(this);
+            },
+            func2: (a) => {
+                console.log(a.name);
+            }
+        }
+        obj.func2(obj);
+        obj.func1();
+
+        var bunny = {
+            name: 'Usagi',
+            tasks: ['transform', 'eat cake', 'blow kisses'],
+            showTasks() {
+                this.tasks.forEach((task) => {
+                    console.log(this.name + " wants to " + task);
+                });
+            }
+        };
+
+      //  bunny.showTasks();
+
+
+
+
+
+    </script>
+</body>
+
+</html>

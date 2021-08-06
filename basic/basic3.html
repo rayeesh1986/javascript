@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- external -->
+    <!--  <script src="custom.js"></script> -->
+</head>
+
+<body>
+    <h1>Basic</h1>
+</body>
+
+<script>
+
+    // "use strict";
+    /* a = 2 */
+    /* console.log(a) */
+
+    /* 
+    
+    
+        var d = new Date();
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var day = ["sun", "Mon", "Tues", "Wed", "Thus", "Fri", "Sat"]
+        console.log(day[d.getDay()])
+    
+        const c = Math.floor(Math.random() * 5);
+        console.log(c) */
+
+
+
+    /* function a() {
+        var a = true;
+        let b = 5;
+        if (b === "5") {
+            console.log(b)
+        }
+    }
+    console.log(a()) */
+
+
+    /* var d = new Date();
+    var day = ["sun", "Mon", "Tues", "Wed", "Thus", "Fri", "Sat"]
+
+
+    switch (d.getDay()) {
+        case 2:
+            console.log("case 1")
+            break;
+        case 3:
+            console.log("case 2")
+            break;
+        default:
+            console.log("default")
+    } */
+
+
+    /* for (var i = 0; i < 10; i++) {
+        console.log(i + 1)
+    } */
+    /* var i = 0;
+    while (i < 10) {
+        console.log(i++ + 1)
+        if (i === 3) {
+            throw "value is exist in loop";
+        }
+    } */
+
+    /* var person = [{ fname: "John", lname: "Doe", age: 251 }, { fname: "John", lname: "Doe", age: 215 }, { fname: "John", lname: "Doe", age: 88 }, { fname: "John", lname: "Doe", age: 275 }];
+    function v(i, index) {
+
+        console.log(i.age)
+        console.log(index)
+
+    }
+    person.forEach(v)
+ */
+
+    /* var currentScope = 0; // global scope
+    function c() {
+        var currentScope = 1, one = 'scope1';
+        alert(currentScope);
+        (function () {
+            var currentScope = 2, two = 'scope2';
+            alert(currentScope);
+            function b() {
+                var currentScope = 3, three = 'scope3';
+                alert(currentScope);
+                alert(one + two + three); // climb up the scope chain to get one and two
+            }
+        }());
+    }
+
+
+
+    c() */
+
+    /*  var a = "hello world 0 === ";
+     function a1() {
+         var b = "hello world 1 === ";
+         a2();
+         function a2() {
+             var c = "hello world 2 === ";
+             a3();
+             function a3() {
+                 var d = "hello world 3 === ";
+                 a4()
+                 function a4() {
+                     var e = "hello world 4";
+                     console.log(a + b + c + d + e)
+ 
+                 }
+             }
+         }
+     }
+     
+     a1(); */
+
+    /*  var text = '{ "employees" : [' +
+         '{ "firstName":"John" , "lastName":"Doe" },' +
+         '{ "firstName":"Anna" , "lastName":"Smith" },' +
+         '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+     var a = 2;
+     function b() {
+ 
+     }
+ 
+     b()
+     var obj = JSON.stringify(text);
+     console.log(text) */
+
+
+
+    /*     function Person(first, last, age, eyecolor) {
+            
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eyecolor;
+            x: return function () {
+                console.log(``)
+            }
+        }
+    
+        var myFather = new Person("John", "Doe", 50, "blue");
+        var myMother = new Person("Sally", "Rally", 48, "green");
+     */
+
+
+    function a() {
+        var a = 10;
+        function b() {
+            const c = a + 5;
+            console.log(c)
+        }
+        return b
+    }
+    console.dir(a());
+
+
+
+    // normal vs arrow function 
+
+    /*   function z1() {
+          return 2 * 3
+      }
+      console.log(z1());
+  
+  
+      let z2 = a => 2 * 3 + a;
+      console.log(z2(5));
+  
+  
+      let z3 = "Anoop";
+      let z4 = "Kumar";
+  
+      console.log(`My full name is ${z3} ${z4} close !!!`);
+   */
+
+
+
+
+    /*
+        function z6() {
+            var name = "Anoop kumar";
+            z5(name)
+        }
+    
+        function z5(name) {
+            console.log(`my name is ${name}`)
+        }
+    
+        console.log(z6()) */
+
+
+    /* function greeting(name) {
+        console.log('Hello ' + name);
+    }
+
+    function processUserInput(callback) {
+        console.log(callback);
+        var name = 'Please enter your name.';
+        callback(name);
+    }
+
+    processUserInput(greeting); */
+
+    /*
+        // function
+        function greet(c) {
+    
+            c()
+        }
+    
+        // callback function
+        function callMe() {
+            console.log('I am callback function');
+        }
+    
+        // passing function as an argument
+        greet(callMe); */
+
+
+
+    // recursion
+    /* function recursion1(num, pow) {
+        if (pow == 1) {
+            return num;
+        } else {
+            return num * recursion1(num, pow - 1);
+        }
+    }
+    recursion1(2, 5);
+    console.log(recursion1(2, 2));
+
+    function recursion2(num, pow) {
+        let numdata = 1;
+        for (let i = 0; i < pow; i++) {
+            numdata *= num;
+        }
+        return numdata;
+    }
+
+    console.log(recursion2(2, 10)); */
+
+
+
+    // this
+
+
+    function z8(fname, laname) {
+        this.firstname = fname,
+            this.lastname = laname,
+            this.getFullname = function () {
+                console.log(`My full name is ${this.firstname} ${this.lastname}`)
+            }
+    }
+
+    let z9 = new z8("Anoop", "Kumar");
+    // console.log(z9)
+
+
+    class abc {
+        constructor(fname, laname) {
+            //prototype member
+            this.firstname = fname,
+                this.lastname = laname
+        }
+        //prototype instance
+        getFullname() {
+            return (`My full name is ${this.firstname} ${this.lastname}`)
+        }
+
+    }
+
+
+    class bca extends abc {
+        constructor(fname, laname, mobileName, modelName, launchyear) {
+            super(fname, laname)
+            this.mobile = mobileName,
+                this.model = modelName,
+                this.year = launchyear
+        }
+
+        getFullname2() {
+            console.log(`${super.getFullname()} my mobile name ${this.mobile} and ${this.model} and launch year ${this.year}`)
+        }
+
+
+    }
+
+
+
+    let z12 = new abc("Anoop 1", "Kumar 1")
+
+    z13 = new bca("Anoop 2", "Kumar 2", "Samsung", "5500", "2021")
+
+    z13.getFullname2()
+
+    // z9.getFullname();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

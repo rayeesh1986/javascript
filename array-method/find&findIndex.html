@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <h1>find</h1>
+
+    <pre>
+        const array1 = [5, 12, 8, 130, 44];
+
+        const found = array1.find(element => element > 10);
+
+        console.log(found);
+        // expected output: 12
+
+
+        const array = [1, 2, 3, 4, 5];
+
+        function age(a, b ,c){
+        console.log(a , b, c)
+
+        return a >= 4
+
+        }
+
+        array.find(age)
+
+
+        const inventory = [
+        {name: 'apples', quantity: 2},
+        {name: 'bananas', quantity: 0},
+        {name: 'cherries', quantity: 5}
+        ];
+
+        function isCherries(fruit) {
+        return fruit.name === 'cherries';
+        }
+
+        console.log(inventory.find(isCherries));
+        // { name: 'cherries', quantity: 5 }
+
+
+        The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+    </pre>
+
+
+
+    <h1>findIndex</h1>
+
+    <pre>
+
+        const array1 = [5, 12, 8, 130, 44];
+
+        const isLargeNumber = (element) => element > 13;
+
+        console.log(array1.findIndex(isLargeNumber));
+        // expected output: 3
+
+        The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+    </pre>
+
+
+
+
+    <script>
+
+        // find array example start 
+        const array = [1, 2, 3, 4, 5];
+
+        function age(a, b, c) {
+            console.log(a, b, c)
+
+            return a >= 4
+
+        }
+
+        array.find(age)
+
+        // find end
+
+
+
+
+
+        // findIndex array example start 
+
+        const array1 = [5, 12, 8, 130, 44];
+
+        const isLargeNumber = (element) => element > 13;
+
+        console.log(array1.findIndex(isLargeNumber));
+        // expected output: 3
+
+        // findIndex end
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <h1>some</h1>
+
+    <pre>
+        const array = [1, 2, 3, 4, 5];
+
+        // checks whether an element is even
+        const even = (element) => element % 2 === 0;
+
+        console.log(array.some(even));
+        // expected output: true
+        // arr.some(callback(element[, index[, array]])[, thisArg])
+        The some() method tests whether at least one element in the array passes the test implemented by the provided function. 
+        It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+
+
+            function isBiggerThan10(element, index, array) {
+                return element > 10;
+            }
+            
+            
+            [12, 5, 8, 1, 4].some(isBiggerThan10); // true
+    </pre>
+
+
+
+    <h1>every</h1>
+
+    <pre>
+
+        const isBelowThreshold = (currentValue) => currentValue < 40;
+
+        const array1 = [1, 30, 39, 29, 10, 13];
+
+        console.log(array1.every(isBelowThreshold));
+        // expected output: true
+
+
+
+        The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+
+
+        function isBigEnough(element, index, array) {
+            return element >= 10;
+          }
+          [12, 5, 8, 130, 44].every(isBigEnough);   // false
+          [12, 54, 18, 130, 44].every(isBigEnough); // true
+    </pre>
+
+
+
+
+    <script>
+
+        // some array example start 
+        const array = [1, 2, 3, 4, 5];
+        // checks whether an element is even
+        const even = (element) => element % 2 === 0;
+        console.log(array.some(even));
+        // expected output: true
+
+        function checkAdult(age) {
+            return age >= 4;
+        }
+
+        console.log(array.some(checkAdult));
+
+        // expected output: true
+
+        // some end
+
+
+
+
+
+        // every array example start 
+
+        const isBelowThreshold = (currentValue) => currentValue < 40;
+        const array1 = [1, 30, 39, 29, 10, 13];
+        console.log(array1.every(isBelowThreshold));
+
+
+        function isBigEnough(element, index, array) {
+            console.log("=====" + element, index, array + "==========")
+            return element >= 10;
+        }
+        [12, 5, 8, 130, 44].every(isBigEnough);   // false
+        [12, 54, 18, 130, 44].every(isBigEnough); // true
+        // expected output: true
+
+
+
+        function callbackFn(element, index, array) {
+
+            console.log("&&&&&&&&&&&&&&=====" + element, index, array + "==========&&&&&&&&&&&&&&&");
+            return element >= 3;
+        }
+
+
+        //  console.log([12, 5, 8, 130, 44].every(callbackFn));
+
+
+        console.log("===========================================");
+
+        function isBiggerThan10(element, index, array) {
+            console.log("jjjjjjjjjjjjjjjjjj" + element, index, array + "jjjjjjjjjjjjjjjjjjjj");
+            return element > 10;
+        }
+
+
+        const cc = [12, 5, 8, 1, 4].some(isBiggerThan10);
+        console.log(cc)
+
+
+    </script>
+</body>
+
+</html>

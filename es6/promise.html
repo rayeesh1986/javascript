@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <h1>Promise</h1>
+
+    <div id="demo">Promise</div>
+
+
+    <script>
+
+        let a = 1;
+
+        const mn = async () => {
+            console.log("first")
+            setTimeout(() => {
+                console.log([j, "All Done 2s"])
+            }, 1000);
+            let j = 3;
+            console.log("hi")
+            let ao = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([j, "All Done"])
+                }, 5000);
+            });
+
+
+            let cc = await ao;
+
+
+            console.log(cc)
+            console.log("Third")
+        }
+        //  mn()
+
+        let mm = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(["All Done"])
+            }, 5000);
+        });
+
+        // console.log(mm);
+
+
+        console.log("====================================================================================");
+        console.log("start");
+        /* function a1(name, callback) {
+
+            setTimeout(() => {
+                console.log(`get name ${name}`);
+                callback(name)
+            }, 2000);
+        } */
+
+        function a2() {
+            setTimeout(() => {
+                console.log(`get name ${name}`);
+                callback(name)
+            })
+        }
+
+        /* function a3() {
+
+        } */
+
+
+        /* const aAll = a1("rayeesh", function () {
+            console.log("g name")
+        }) */
+        console.log("end");
+        console.log("====================================================================================");
+        console.log("promise works");
+
+        const promiseData = new Promise((resolve, reject) => {
+            let req = false;
+            if (req === true) {
+                resolve([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+            } else {
+                reject(`Get some server errors`);
+            }
+        });
+
+        promiseData.then((value) => {
+            console.log("get this value result", value)
+        }).catch((error) => {
+            console.log(error)
+        }).finally(() => {
+            console.log("finally code has done")
+        });
+
+        promiseData
+
+        console.log("====================================================================================");
+
+
+        async function test() {
+            const response = await fetch('https://api.github.com/users').then((resp) => resp.json()
+                .then())
+            return response;
+        }
+
+
+        const vv = test();
+        console.log(vv)
+
+
+        console.log("====================================================================================");
+
+        const p = new Promise((resolve, reject) => {
+            let req = true;
+            if (req === true) {
+                resolve([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+            } else {
+                reject(`Get some server errors 1`);
+            }
+        })
+
+        p.then((value) => {
+            console.log("get this value result", value)
+        }).catch((error) => {
+            console.log(error)
+        }).finally(() => {
+            console.log("finally code has done 1")
+        });
+
+        console.log(p)
+    </script>
+</body>
+
+</html>

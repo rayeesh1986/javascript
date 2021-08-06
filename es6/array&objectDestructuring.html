@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <h1>Array Destructuring</h1>
+
+
+    <script>
+        let a = ["css", "html", "php", "js", "phyton"];
+        let b = ["css", "html", "php", "js", "phyton"];
+
+        /*  const c1 = a[0]
+         const c2 = a[1]
+         const c3 = a[2]
+         const c4 = a[3]
+         const c5 = a[4] */
+
+        //const [c1, c2, c3, c4, c5] = a;
+        //console.log(c1, c2, c3, c4, c5);
+
+        let [a1, b1, c1, ...rest] = [2, 4, 6, 10, 15, 17, 19];
+
+        console.log(a1);
+        console.log(b1);
+        console.log(c1);
+        console.log(rest);
+
+
+
+        let obj = {
+            name: "Rayeesh",
+            degree: {
+                classn: {
+                    c: {
+                        course: "MBA"
+                    }
+                }
+            }
+        }
+
+        // object destructuring in multi level
+        const { degree: { classn: { c: { course: noon } } } } = obj
+
+        // aliasIdentifier is called Aliases
+        //const { identifier: aliasIdentifier } = expression;
+
+
+        let { n1: z1, n2: z2, n3: z3, ...rest1 } = { n1: 2, n2: 4, n3: 6, n4: 10, n5: 15, n6: 17, n7: 19 };
+
+        console.log(z1);
+        console.log(z2);
+        console.log(z3);
+        console.log(rest1.n4);
+        console.log(rest1);
+
+
+    </script>
+</body>
+
+</html>

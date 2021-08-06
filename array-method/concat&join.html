@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <h1>Concat</h1>
+
+    <pre>
+        let a = ["css", "html", "php", "js", "phyton"];
+        let b = ["css", "html", "php", "js", "phyton"];
+        let c = ["css", "html", "php", "js", "phyton"];
+        let d = ["css", "html", "php", "js", "phyton"];
+        let e = ["css", "html", "php", "js", "phyton"];
+
+        let f = a.concat(b, c, d, e);
+        console.log(f);
+
+        The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+
+    </pre>
+
+
+    <h1>Join</h1>
+
+    <pre>
+        const elements = ['Fire', 'Air', 'Water'];
+
+        console.log(elements.join());
+        // expected output: "Fire,Air,Water"
+
+        console.log(elements.join(''));
+        // expected output: "FireAirWater"
+
+        console.log(elements.join('-'));
+        // expected output: "Fire-Air-Water"
+       
+        The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. 
+        If the array has only one item, then that item will be returned without using the separator.
+    </pre>
+
+    <script>
+
+        // concat array example start 
+        let a = ["css", "html", "php", "js", "phyton"];
+        let b = ["css", "html", "php", "js", "phyton"];
+        let c = ["css", "html", "php", "js", "phyton"];
+        let d = ["css", "html", "php", "js", "phyton"];
+        let e = ["css", "html", "php", "js", "phyton"];
+
+        let f = a.concat(b, c, d, e);
+        console.log(f);
+        // concat end
+
+
+
+
+        // join array example start 
+        const elements = ['Fire', 'Air', 'Water'];
+
+        console.log(elements.join());
+        // expected output: "Fire,Air,Water"
+
+        console.log(elements.join(''));
+        // expected output: "FireAirWater"
+
+        console.log(elements.join('-'));
+        // expected output: "Fire-Air-Water"
+        // join end
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

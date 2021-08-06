@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <h1>Multidimension Array </h1>
+    <pre>
+        let bb = [
+            ["css", "html", "php", "js", "phyton", "gulp"],
+            ["css", "html", "php", "js", "phyton", "css", "html", "php", "js", "phyton"],
+            ["css", "html", "php", "js", "phyton", "css", "html", "php"],
+            ["css", "html", "php", "js", "phyton", "css", "html", "php", "js", "phyton"],
+            ["css", "html", "php", "js", "phyton"]
+        ]
+
+
+        let mn = bb.length;
+
+        for (var i = 0; i < mn; i++) {
+            const n = bb[i].length;
+            xyz(n)
+        }
+
+        function xyz(n) {
+            for (let v = 0; v < n; v++) {
+                document.write(bb[i][v] + ", ")
+            }
+            document.write("<br/> <br/>")
+        }
+    </pre>
+
+
+
+    <script>
+
+        // Multidimension array start 
+        let bb = [
+            ["css", "html", "php", "js", "phyton", "gulp"],
+            ["css", "html", "php", "js", "phyton", "css", "html", "php", "js", "phyton"],
+            ["css", "html", "php", "js", "phyton", "css", "html", "php"],
+            ["css", "html", "php", "js", "phyton", "css", "html", "php", "js", "phyton"],
+            ["css", "html", "php", "js", "phyton"]
+        ]
+
+
+        let mn = bb.length;
+        document.write('<table border="1px">')
+        for (var i = 0; i < mn; i++) {
+            document.write('<tr>');
+            const n = bb[i].length;
+            xyz(n)
+            document.write('</tr>');
+            /*  for (let v = 0; v < n; v++) {
+                 document.write(bb[i][v])
+             }
+             document.write("<br/> <br/>") */
+        }
+        document.write('</table>')
+
+        function xyz(n) {
+            for (let v = 0; v < n; v++) {
+                document.write('<td>');
+                document.write(bb[i][v] + ", ");
+                document.write('</td>');
+            }
+            //document.write("<br/> <br/>")
+        }
+        // end Multidimension
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
