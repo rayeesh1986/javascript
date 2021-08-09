@@ -55,6 +55,31 @@
     console.log(b)
     console.log(d)
 
+    console.log("==================== Shallow copy ==========================");
+
+    let objData = {
+        name: "John",
+        school: "10th",
+        num: 24,
+        data: {
+            d1: 34,
+            d2: 35
+        }
+    };
+
+    // shallow copy me reference obj ke nested object ke sath sath wo main object ko bhi change karta hai isliye shallow copy me nested object ko use nahi karte uske liye deep copy ka use karte hai
+    let adc = Object.assign({}, objData);
+    adc.data.d1 = 40;
+    console.log(adc);
+    console.log(objData)
+    console.log("=================== Deep copy ===========================");
+
+    let bgc = JSON.parse(JSON.stringify(objData))
+    bgc.data.d1 = "1054";
+    console.log(adc);
+    console.log(bgc)
+
+
 </script>
 
 </html>
