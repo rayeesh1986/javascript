@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -15,9 +11,7 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
 
     <h1>Var, Let, Const</h1>
 
@@ -196,7 +190,30 @@
             console.log(vv)
         }
 
-        cv()
+        cv();
+
+
+
+
+        console.log("=============================================");
+
+
+        let _b = 1;
+        function _b1() {
+            console.log(_b)
+            let _b2 = true;
+            let _b4 = "Hello";
+            if (_b2) {
+                let _b3 = 5;
+                var _b5 = 25;
+                console.log(_b3);
+                console.log(_b4)
+            }
+            console.log(_b5);
+            // console.log(_b3);
+        }
+
+        _b1()
 
 
 
