@@ -17,14 +17,20 @@
 <body>
 
 
-    <h1>Fat Arrow</h1>
-    <p>The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is
-        used: ... In a function, this refers to the global object. In a function, in strict mode, this is undefined . In
-        an event, this refers to the element that received the event.</p>
+    <h1>Arrow function</h1>
+    <p>An arrow function expression is a compact alternative to a traditional function expression, but is limited and
+        can't be used in all situations.</p>
+
+    <pre>Differences & Limitations:
+
+        Does not have its own bindings to this or super, and should not be used as methods.
+        Does not have new.target keyword.
+        Not suitable for call, apply and bind methods, which generally rely on establishing a scope.
+        Can not be used as constructors.
+        Can not use yield, within its body.</pre>
 
 
     <script>
-        'strict mode'
 
 
         /* function x(a, b) {
@@ -83,7 +89,7 @@
         }
 
         const arrowFunction = function () {
-            console.log(`My name is ${this.name}`);
+            console.log(`My name is ${this.name} and Alam`);
         }
         /*  console.log(p.normalFunction());
  
@@ -92,7 +98,7 @@
 
         const amn = arrowFunction.bind(p)
 
-        // console.log(amn())
+        console.log(amn())
 
         //console.log(p.normalFunction());
 
@@ -104,13 +110,14 @@
 
         let bb = () => {
             var add = 2 + 3;
+
             console.log(`Added value is ${add}`);
             console.log(this);
         }
         // this keyword firstly check own ap
 
 
-        //  bb()
+        bb()
 
 
         console.log(this)
@@ -119,44 +126,6 @@
         }
         // it will return window object
         a();
-
-
-        let newobj = {
-            name: "Manzar",
-            company: "Envigo",
-            mfun: function () {
-                return `my Name is ${this.name} and company ${this.company}`;
-            },
-
-            mfun2: () => this
-
-
-        }
-        const n = newobj.mfun2.bind(newobj)
-        console.log(n());
-
-
-
-
-        let _b = {
-            name: "Rayeesh Alam",
-            classdata: "MCA",
-            roll: function () {
-                console.log(`This is my name ${this.name}`);
-                /* var _this = this;
-                console.log(_this)
-                let v = (_this) => {
-                    console.log(_this)
-                        .call(_this,)
-                }
-
-                return v; */
-            }
-        }
-
-        _b.roll();
-
-
 
 
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Async Await</h1>
+
+    <div id="demo">Async Await</div>
+    <p>An async function is a function declared with the async keyword, and the await keyword is permitted within them.
+        The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style,
+        avoiding the need to explicitly configure promise chains</p>
+
+    <script>
+
+        // asyncronus 
+
+        const mn = async () => {
+            console.log("First");
+
+            let c = await new Promise((resovle, reject) => {
+                let j = 3;
+                setTimeout(() => {
+                    resovle(`${j}, Second`);
+                }, 3000)
+            });
+
+            let d = await new Promise((resovle, reject) => {
+                let j = 5;
+                setTimeout(() => {
+                    resovle(`${j}, Third`);
+                }, 1000)
+            });
+
+            console.log(c)
+            console.log(d)
+            console.log("Fourth");
+        }
+        mn();
+
+    </script>
+</body>
+
+</html>
