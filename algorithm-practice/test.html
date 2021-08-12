@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Home Test - TechChefs - A Virtusa Company</h1>
+</body>
+<script>
+
+    // Question 1 answer
+    function checkStrdta(op1, op2) {
+        let con1 = "";
+        let con2 = "";
+        for (let i = 0; i < op1.length; i++) {
+            if (!op2.includes(op1[i])) {
+                con1 += op1[i]
+            }
+        }
+        for (let i = 0; i < op2.length; i++) {
+            if (!op1.includes(op2[i])) {
+                con2 += op2[i]
+            }
+        }
+        return [con1, con2]
+    }
+
+    console.log(checkStrdta("ABC", "BC"))
+    console.log(checkStrdta("BC", "BANGALORE"));
+
+
+    // Question 2 Answer
+    let url = "https://reqres.in/api/users";
+    function api_1(url, usernumber, id) {
+        let api = fetch(`${url}/${usernumber}`);
+        api.then(response => response.json())
+            .then(function (result) {
+                let user = result.data;
+                let usermail = user.email;
+                let createElemt = document.createElement('div');
+                createElemt.id = id;
+                createElemt.innerHTML = usermail;
+                document.body.appendChild(createElemt);
+            })
+            .catch(err => console.log('Request Failed', err));
+    }
+
+    api_1(url, 1, "mail_id_1");
+    api_1(url, 3, "mail_id_2")
+    api_1(url, 10, "mail_id_3");
+
+</script>
+
+</html>

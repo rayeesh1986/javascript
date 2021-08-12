@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -21,73 +17,71 @@
     <p>The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is
         used: ... In a function, this refers to the global object. In a function, in strict mode, this is undefined . In
         an event, this refers to the element that received the event.</p>
-
-
     <script>
 
         //"use strict";
-        /*
-                function a() {
-                    console.log(this)
-                }
-                a();
-        
-                var b1 = {
-                    name: "Rishi b1",
-                    showName: function () {
-                        console.log(this.name)
-                    }
-                }
-                b1.showName();
-        
-                var b2 = {
-                    name: "Rishi b2",
-                    showName() {
-                        console.log(this.name)
-                    }
-                }
-                b2.showName();
-        
-                var b3 = {
-                    name: 'Rishi b3',
-                    tasks: ['transform', 'eat cake', 'blow kisses'],
-                    showName: function () {
-                        this.tasks.forEach(function (task) {
-                            console.log("== wants to " + task);
-                            console.log(typeof (this.name))
-                            console.log(this.name)
-                        });
-                    }
-                }
-                b3.showName();
-        
-        
-                var b4 = {
-                    name: 'Rishi b4',
-                    tasks: ['transform 4', 'eat cake 4', 'blow kisses 4'],
-                    showName: function () {
-                        var _this = this;
-                        this.tasks.forEach(function (task) {
-                            console.log(_this);
-                        });
-                    }
-                }
-                b4.showName();
-        */
+
+        function a() {
+            console.log(this)
+        }
+        a();
+
+        var b1 = {
+            name: "Rishi b1",
+            showName: function () {
+                console.log(this.name)
+            }
+        }
+        b1.showName();
+
+        var b2 = {
+            name: "Rishi b2",
+            showName() {
+                console.log(this.name)
+            }
+        }
+        b2.showName();
+
+        var b3 = {
+            name: 'Rishi b3',
+            tasks: ['transform', 'eat cake', 'blow kisses'],
+            showName: function () {
+                this.tasks.forEach(function (task) {
+                    console.log("== wants to " + task);
+                    console.log(typeof (this.name))
+                    console.log(this.name)
+                });
+            }
+        }
+        b3.showName();
+
+
+        var b4 = {
+            name: 'Rishi b4',
+            tasks: ['transform 4', 'eat cake 4', 'blow kisses 4'],
+            showName: function () {
+                var _this = this;
+                this.tasks.forEach(function (task) {
+                    console.log(_this);
+                });
+            }
+        }
+        b4.showName();
+
 
         var b5 = {
             name: 'Rishi b5',
             tasks: ['transform 5', 'eat cake 5', 'blow kisses 5'],
             // fat arrow function me own this nahi hota it will always go to window object.
             showName: () => {
-                console.log(this.b5.name)
-                console.log("test")
+                console.log(this.b5.name);
+                this.b5.tasks.forEach((task) => {
+                    console.log(this.b5.name + " wants to " + task);
+                });
+                console.log("test");
             }
         }
         b5.showName();
-
-
-
 
         let obj = {
             name: "Rayeesh",
@@ -132,8 +126,6 @@
             }
         }
         b5.showName();
-
-
 
     </script>
 </body>

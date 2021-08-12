@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Algorithm Practice</h1>
+</body>
+<script>
+
+    console.log("Get biggest value and second biggest value");
+    var _array = [77, 1, 2, 3, 99, 1044, 4455, 2055, 4, 33, 99, 55, 6, 5, 88, 30]
+
+    function _bigVal(arr) {
+        let biggest = 0;
+        let nextBiggest = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (biggest < arr[i]) {
+                nextBiggest = biggest;
+                biggest = arr[i];
+            } else if (nextBiggest < arr[i] && arr[i] != biggest) {
+                nextBiggest = arr[i];
+            }
+        }
+        return {
+            biggest,
+            nextBiggest
+        };
+    }
+    let _v = _bigVal(_array);
+    console.log(_v)
+
+    console.log("=============================================================")
+
+    console.log("Get long word example 1");
+    let b = "this is india and i am indian";
+
+    function getWord(word) {
+        let a = word.split(" ");
+        let v = "";
+        for (let i = 0; i < a.length; i++) {
+            if (v.length < a[i].length) {
+                v = a[i];
+            }
+        }
+        return v;
+    }
+
+    console.log(getWord(b))
+
+    console.log("=============================================================")
+
+    // longest word in string 
+    console.log("Get long word example 2");
+    let b1 = "Definition: A lump sum amount log. is defined as a single complete sum of money. A lump sum investment is of the entire amount at one go. For example, if an investor is willing to invest the entire amount available with him in a mutual fund, it will refer to as lump sum mutual fund investmentdata.";
+
+    function filterWord(str) {
+        let stringVal = str.split(" ");
+        let lVal = stringVal[0]
+        stringVal.filter((v, i) => {
+            if (lVal.length < v.length) {
+                lVal = v;
+            }
+        })
+        return lVal;
+    }
+
+
+    let _longWord = filterWord(b1)
+    console.log(_longWord.replaceAll(".", ""))
+
+    console.log("=============================================================")
+
+    console.log("array shuffle 1");
+    let list = [21, 42, 53, 4, 85, 6, 27, 85, 9]
+    list = list.sort(() => Math.random() - 0.5);
+    console.log(list)
+
+    console.log("array shuffle 2");
+    function shuffleArr(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1))
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
+    let arr = [25, 15, 33, 18]
+    shuffleArr(arr);
+
+    console.log(arr);
+
+    console.log("=============================================");
+
+    // reverse world and position change
+    let str1 = "Hello world";
+    function ccc(str_data) {
+        let tt = "";
+        for (i = str_data.length - 1; i >= 0; i--) {
+            tt += str_data[i];
+        }
+        return tt;
+    }
+    console.log(ccc(str1));
+
+    console.log("=============================================");
+    // reverse word but not position change
+    function reverseword(str) {
+        let d = str.split(" ");
+        let f = []
+        for (var i = 0; i < d.length; i++) {
+            let g = [d[i]];
+            for (var j = g.length - 1; j >= 0; j--) {
+                let b = g[j].split("").reverse().join("");
+                f.push(b);
+            }
+        }
+        return f;
+    }
+    console.log(reverseword(str1));
+
+    console.log("=============================================");
+    // filter and duplicate remove data
+    let g1 = [2, 3, 4, 56, 6, 7, 9, 88, 66, 7, 8, 18, 55, 55, 55];
+    let num = 6;
+    function filterdata(a, n) {
+        let h = [];
+        for (let i = 0; i < a.length; i++) {
+            if (n <= a[i]) {
+                if (!h.includes(a[i])) {
+                    h.push(a[i])
+                }
+            }
+        }
+        return h
+    }
+
+    console.log(filterdata(g1, num))
+
+
+    console.log("=============================================");
+    console.log("get prime number")
+    function getPrime(n) {
+        for (var counter = 0; counter <= n; counter++) {
+            var notPrime = false;
+            for (var i = 2; i <= counter; i++) {
+                if (counter % i === 0 && i !== counter) {
+                    notPrime = true;
+                }
+            }
+            if (notPrime === false) {
+                console.log(counter)
+            }
+        }
+
+    }
+
+    let _xx = getPrime(10)
+    console.log(_xx)
+
+    console.log("=============================================");
+
+    console.log("Remove duplicate letter in the sentence")
+    function removeDuplicateChar(str) {
+        let a = str.replaceAll(" ", "");
+        let b = a.split("");
+        let c = []
+        for (let i = 0; i < b.length; i++) {
+            if (!c.includes(b[i])) {
+                c.push(b[i])
+            }
+        }
+        return c;
+    }
+    let _nm = removeDuplicateChar('Learn more javascript dude');
+    console.log(_nm);
+    console.log("=============================================");
+
+    console.log("check palindrome")
+    function checkPalindrome(str) {
+        let i = str.split("").reverse().join("");
+        if (str === i) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //  console.log(checkPalindrome('madam'))
+
+
+    function idPalindrome(str) {
+        let v = str;
+        for (let i = 0; i < v.length / 2; i++) {
+            if (str[i] !== str[v.length - 1 - i]) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    console.log(idPalindrome('madam'));
+
+
+
+
+</script>
+
+</html>
