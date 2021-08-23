@@ -18,50 +18,55 @@
 
     <script>
 
-        // callback
-        function a(a) {
-            setTimeout(() => {
-                console.log(a)
-                b(a)
-            }, 2000)
-        }
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-        function b(d) {
-            setTimeout(() => {
-                console.log(`${d} value get`)
-            }, 2000)
-        }
-
-        a("rayeesh")
-
-
-        const a1 = (name, callback) => {
-            console.log(callback)
-            console.log(`My Friend is ${name}.`);
-            callback(name);
-        }
-
-        const a2 = (n) => {
-            console.log(`and ${n} is a good boy.`)
-        }
-
-        a1("Rayeesh", a2)
-
-
-
-        // function curring
-        function a4(num) {
-            console.log(num)
-            return numb => {
-                return numb * num
+        function getData(ary) {
+            let nn = []
+            for (let m = 0; m < ary.length; m++) {
+                if (!nn.includes(ary[m])) {
+                    nn.push(ary[m])
+                }
             }
+
+            let a = [];
+            let b = [];
+            for (let i = 0; i < nn.length; i++) {
+                if (nn[i] <= 5) {
+                    a.push(ary[i]);
+                } else {
+                    b.push(ary[i]);
+                }
+            }
+            return [a, b];
+        }
+        console.log(getData(arr));
+
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                console.log(i)
+            }, i * 1000);
         }
 
-        m1 = a4(5)
 
-        console.log(m1(2))
-        console.log(m1(3))
-        console.log(m1(4))
+
+        let reducer = (store, action) => {
+
+            switch (action.type) {
+                case CASE1: return {
+                    ...store,
+                    name: "xyz"
+                }
+
+                case CASE2: return {
+                    ...store,
+                    error: "Error found"
+                }
+
+                default: return state;
+            }
+
+        }
+
 
     </script>
 </body>

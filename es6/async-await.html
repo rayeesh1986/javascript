@@ -22,28 +22,42 @@
 
         // asyncronus 
 
-        const mn = async () => {
-            console.log("First");
-
-            let c = await new Promise((resovle, reject) => {
-                let j = 3;
+        function a1() {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resovle(`${j}, Second`);
-                }, 3000)
-            });
-
-            let d = await new Promise((resovle, reject) => {
-                let j = 5;
-                setTimeout(() => {
-                    resovle(`${j}, Third`);
-                }, 1000)
-            });
-
-            console.log(c)
-            console.log(d)
-            console.log("Fourth");
+                    resolve("resolve");
+                    console.log("step 2");
+                }, 2000);
+            })
         }
-        mn();
+
+        function a2() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("resolve");
+                    console.log("step 4");
+                }, 4000);
+            })
+        }
+
+        function a3() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("resolve");
+                    console.log("step 5");
+                }, 4000);
+            })
+        }
+
+        let a = async () => {
+            let bb3 = await a3();
+            console.log("step 1");
+            let bb = await a1();
+            let bb2 = await a2();
+            console.log("step 3");
+        }
+
+        a()
 
     </script>
 </body>

@@ -181,14 +181,6 @@
     console.log("=============================================");
 
     console.log("check palindrome")
-    function checkPalindrome(str) {
-        let i = str.split("").reverse().join("");
-        if (str === i) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     //  console.log(checkPalindrome('madam'))
 
@@ -204,6 +196,23 @@
     }
 
     console.log(idPalindrome('madam'));
+
+
+    console.log("======================================")
+    console.log("get the number of array");
+
+    let a = [99, 55, "r", "name", 2, 5, 80, 40, 6, 7, 8, "rayeesh"]
+    function m(n) {
+        let b = []
+        n.filter(function (v, i) {
+            if (typeof v !== "string") {
+                b.push(v)
+            }
+        })
+        return b.sort((c, d) => c - d);
+    }
+
+    console.log(m(a))
 
 
 
