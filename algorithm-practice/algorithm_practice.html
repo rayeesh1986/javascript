@@ -10,6 +10,11 @@
 </body>
 <script>
 
+    // remove duplicate array
+    let g1 = [2, 3, 4, 56, 6, 7, 9, 88, 66, 7, 8, 18, 55, 55, 55];
+    let uniq = [...new Set(g1)];
+    console.log(uniq)
+
     console.log("Get biggest value and second biggest value");
     var _array = [77, 1, 2, 3, 99, 1044, 4455, 2055, 4, 33, 99, 55, 6, 5, 88, 30]
 
@@ -96,7 +101,7 @@
 
     console.log("=============================================");
 
-    // reverse world and position change
+    // reverse word and position change
     let str1 = "Hello world";
     function ccc(str_data) {
         let tt = "";
@@ -178,6 +183,25 @@
     }
     let _nm = removeDuplicateChar('Learn more javascript dude');
     console.log(_nm);
+
+
+    let str = "mastering data structures algorithms using expert led Courses. Hands-on projects.";
+    function removeDuplicateChar2(strig) {
+        let s = strig.split(" ").join("").split("");
+        let m = [];
+        s.filter((v, i) => {
+            if (!m.includes(v)) {
+                m.push(v)
+            }
+        })
+        return m.join("");
+    }
+    console.log(removeDuplicateChar2(str))
+
+
+
+
+
     console.log("=============================================");
 
     console.log("check palindrome")
@@ -212,9 +236,44 @@
         return b.sort((c, d) => c - d);
     }
 
-    console.log(m(a))
+    console.log(m(a));
 
 
+    console.log("======================================")
+
+    console.log("filter two array in different variables");
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    function getData(ary) {
+        let a = [];
+        let b = [];
+        for (let i = 0; i < ary.length; i++) {
+            if (ary[i] <= 5) {
+                a.push(ary[i])
+            } else {
+                b.push(ary[i])
+            }
+        }
+        return [a, b];
+    }
+
+    let m = getData(arr)
+    console.log(m[0])
+
+
+    console.log("======================================");
+    console.log("first letter caplital");
+    let str = "mastering data structures algorithms using expert led Courses. Hands-on projects.";
+    function capLetter(strig) {
+        let s = strig.split(" ");
+        let c = [];
+        for (let i = 0; i < s.length; i++) {
+            let a = s[i].charAt(0)
+            let b = s[i].substring(1, s.length - 1)
+            c.push(a.toUpperCase() + b)
+        }
+        return c.join(" ")
+    }
+    console.log(capLetter(str))
 
 
 </script>
