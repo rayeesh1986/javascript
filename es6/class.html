@@ -252,7 +252,7 @@
 
         //function ko bind karke function ko ek var me store kaete hai then usko use karte hai
         let c9 = c7.bind(c8);
-        c9("abc", "xyz", "def", "ghi")
+        c9("abc", "xyz", "def", "ghi");
 
         console.log("========================================================================");
 
@@ -361,7 +361,53 @@
         console.log(bb9("Abc", "Bcd"))
 
 
+        function hij(name, val) {
+            this.name = name;
+            this.val = val;
+            this.outer1 = function () {
+                var _this = this;
+                var args = arguments;
+                hh = (b) => {
+                    return (`hi how are you ${_this.name} ${b}`)
+                }
+                return hh.call(hij, "hello");
+            }
+        }
+        let h = new hij("Rayeesh", "2015");
+        console.log(h.outer1());
 
+        console.log("different way of calling function value");
+
+        /* function hij(name, val) {
+            this.name = name;
+            this.val = val;
+            this.outer1 = function () {
+                hh = (b) => {
+                    return (`hi how are you ${this.name} ${b}`)
+                }
+                return hh;
+            }
+        }
+        let h = new hij("Rayeesh", "2015");
+        let pp = h.outer1();
+        console.log(pp()); */
+
+
+
+        /* function hij(name, val) {
+            this.name = name;
+            this.val = val;
+            this.outer1 = function () {
+                return (`${this.name} and ${this.val}`)
+            }
+        }
+        let h = new hij("Rayeesh", "2015");
+        console.log(h)
+        let _hh = (b) => {
+            return (`hi how are you ${h.name} ${b}`)
+        }
+
+        console.log(_hh.call(h, "Private")) */
 
     </script>
 </body>

@@ -8,103 +8,377 @@
 <body>
     <h1>Practice</h1>
 
+    <input type="text" name="name" id="abc" />
+
 </body>
 <script>
 
-    // tricky 1
-    function foo() {
-        let a = b = 0;
-        a++;
-        return a;
+
+    /* function isPrime(num) {
+        if (num <= 1) {
+            return true
+        }
+        for (var i = 2; i < num; i++) {
+            if (num % i === 0) return false;
+        }
+        if (num > 1) {
+            return true;
+        }
     }
 
-    console.log(foo());
-    typeof a; // undefined => ???
-    typeof b; // number => ???
-
-    // tricky 2
-
-    const clothes = ['jacket', 't-shirt'];
-    clothes.length = 0;
-    clothes[0];
-    // output undefined
+    console.log(isPrime(7))
 
 
-    // trick 3
+    let list = [22, 4, 66, 77, 3, 55]
 
-    const length = 4;
-    const numbers = [];
-    for (var i = 0; i < length; i++) {
-        numbers.push(i + 1);
+    let b = list.sort(() => Math.random() - .5);
+
+    function shuffledta(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        return arr
+    }
+    console.log(shuffledta(list));
+
+
+    function isPrime(num) {
+        for (var counter = 0; counter <= num; counter++) {
+            var notPrime = false;
+            for (var i = 2; i < counter; i++) {
+                if (counter % i === 0) {
+                    notPrime = true;
+                };
+            }
+            if (notPrime === false) {
+                console.log(counter)
+            }
+        }
     }
 
-    console.log(numbers)
-
-    // numbers; // => ???
+    console.log(isPrime(100)) */
 
 
-    // trick 4
-    function arrayFromValue(item) {
-        return
-        [item];
+    const a = [1, 2, 3, 4, 5]
+
+    delete a[2]
+
+    // console.log(a)
+
+
+    const elements = [];
+
+    //console.log(elements.pop());
+    // expected output: "Fire,Air,Water"
+
+
+    let Aray = [4, 5, 2, 3, 0, 1];
+
+    let bb = Aray.reduce((acc, v, arr, i) => {
+        return acc + v
+    })
+
+
+    //console.log(bb);
+
+
+    const array1 = [[0, 1], [2, 3], [4, 5]].reduceRight(
+        (accumulator, currentValue) => accumulator.concat(currentValue)
+    );
+    // console.log(array1);
+
+    let ss = Aray.shift();
+
+    // console.log(Aray)
+    // console.log(ss);
+
+    // callback
+
+    let greattings = (n) => {
+        console.log("Hello", n)
     }
 
-    console.log(arrayFromValue(10)); // => ???
-    // output undefined
+    function mm(callback) {
+        const name = "Rayeesh";
+        callback(name);
+    }
+    // console.log(mm(greattings))
 
 
-    // trick 5
-    /*  let cc;
-     for (cc = 0; cc < 3; cc++) {
-         const log = () => {
-             console.log(cc);
-         }
-         setTimeout(log, cc * 1000);
-     } */
+    class abc {
+        constructor(name, degree) {
+            this.name = name;
+            this.degree = degree;
+        }
 
-
-    /* for (let bb = 0; bb < 3; bb++) {
-        setTimeout(() => {
-            console.log(bb);
-        }, bb * 100);
-
-    } */
-
-
-    /*  myVar;   // => ???
-     myConst; // => ???
- 
-     var myVar = 'value';
-     const myConst = 3.14; */
-
-
-    setTimeout(function () {
-        console.log('Hello world!');
-    }, 1000);
-
-
-
-    function makeAdder(x) {
-        // parameter `x` is an inner variable
-        // inner function `add()` uses `x`, so
-        // it has a "closure" over `x`
-        function add(y) {
-            return y + x;
-        };
-
-        return add;
+        outer() {
+            return (`${this.name} data value`)
+        }
     }
 
-    var plusOne = makeAdder(1); // x is 1, plusOne has a reference to add(y)
-    var plusTen = makeAdder(10); // x is 10
+    let obj1 = new abc("Test", "MCA");
 
-    plusOne(3); // 1 (x) + 3 (y) = 4
-    plusTen(13); // 10 (x) + 13 (y) = 23 
+    class efc extends abc {
+        constructor(name, degree, order) {
+            super(name, degree)
+            this.order = order
+        }
 
-    foo(); // Uncaught TypeError: foo is not a function
-    var foo = function () {
-        console.log('FOOOOO');
-    };
+        outData() {
+            return (`heloo, ${this.name} ${super.outer()}`)
+        }
+    }
+
+    let bob = new efc("Test", "MBA", "208044")
+
+    //console.log(bob.outData());
+
+
+
+
+    // function hij(name, val) {
+    //     this.name = name;
+    //     this.val = val;
+    //     this.outer1 = function () {
+    //         /* var _this = this;
+    //         var args = arguments; */
+    //         /* function hh(b) {
+    //             return (`hi how are you ${_this.name} ${b}`)
+    //         } */
+    //         //hh.call(hij, "hello");
+    //         // return hh;
+    //     }
+    // }
+
+    // let h = new hij("Rayeesh", "2015");
+    // /* let gh = h.outer1();
+    // console.log(gh()) */
+
+
+    /* function hij(name, val) {
+        this.name = name;
+        this.val = val;
+        this.outer1 = function () {
+            var _this = this;
+            var args = arguments;
+            hh = (b) => {
+                return (`hi how are you ${_this.name} ${b}`)
+            }
+            return hh.call(hij, "hello");
+        }
+    }
+    let h = new hij("Rayeesh", "2015");
+    console.log(h.outer1()); */
+
+
+
+    function hij(name, val) {
+        this.name = name;
+        this.val = val;
+        this.outer1 = function () {
+            return (`${this.name} and ${this.val}`)
+        }
+    }
+    let h = new hij("Rayeesh", "2015");
+    console.log(h)
+
+    let _hh = function (b) {
+        return (`hi how are you ${this.outer1()} ${b}`)
+    }
+
+    console.log(_hh.call(h, "Private"))
+    console.log(_hh.apply(h, ["Private 1"]))
+    let jlk = _hh.bind(new hij("Rayeesh 1", "2019"));
+
+    console.log(jlk("alam",))
+
+
+    /* 
+        function hh(b) {
+            console.log(`hi how are you ${this.name} ${b}`)
+        } */
+
+    //  hh.call(h, "hello");
+
+
+
+    let obj = {
+        name: "Rayeesh",
+        degree: {
+            classn: {
+                c: {
+                    course: "MBA"
+                }
+            }
+        }
+    }
+
+    const { degree: { classn: { c: { course: noon } } } } = obj
+    // console.log(noon)
+
+
+    function c4() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("1");
+                console.log("step 2")
+            }, 3000);
+
+        })
+    }
+
+    function c5() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("1");
+                console.log("step 3")
+            }, 1000);
+
+        })
+    }
+
+    let asd = async () => {
+
+        let hj = await c4();
+        let hj2 = await c5();
+        console.log("step 1")
+    }
+
+    // asd();
+
+
+    var ar1 = [-1, -4, 5, 6, 8, 9, -12, -5, 4, -1, 1100, 500, 2400];
+
+
+    let bnh = ar1.filter((v) => {
+        if (v > 0) {
+            return v
+        }
+    })
+
+    // console.log(bnh);
+
+    let bnh2 = ar1.map((v) => {
+        if (v > 0) {
+            return v + 1
+        }
+    });
+    // console.log(bnh2);
+
+
+
+    var temp = 10;
+    function display() {
+        var temp;
+        if (!temp) {
+            let temp = 20;
+            console.log(temp)
+        }
+        console.log(temp)
+    }
+    // display();
+
+    //  console.log(temp);
+
+    let _b = 1;
+    function _b1() {
+        console.log(_b)
+        let _b2 = true;
+        let _b4 = "Hello";
+        if (_b2) {
+            let _b3 = 5;
+            var _b5 = 25;
+            console.log(_b3);
+            console.log(_b4)
+        }
+        console.log(_b5);
+        // console.log(_b3);
+    }
+
+    // _b1()
+
+
+    function close() {
+        var f = 0;
+        let n = () => {
+            console.log(f)
+        }
+        return n;
+    }
+    console.dir(close());
+    let asdf = close();
+    asdf();
+    asdf();
+    asdf();
+    asdf();
+
+
+
+
+
+    // let countData = 0;
+
+    // function deboun(fn, delay) {
+    //     let timer;
+    //     return function () {
+    //         clearTimeout(timer)
+    //         timer = setTimeout(() => {
+    //             fn()
+    //         }, delay);
+    //     }
+
+    // }
+
+    // let ccd = () => {
+    //     console.log(countData++)
+    // }
+    // let deb = deboun(ccd, 1000)
+    // let abcc = document.getElementById('abc');
+    // abcc.addEventListener('keypress', deb);
+
+
+    let countData = 0;
+    function deboun(fn, delay) {
+        let timer;
+        return function () {
+            let _this = this;
+            let arg = arguments;
+            if (!timer) {
+                fn.call(_this)
+                timer = true;
+                setTimeout(() => {
+                    timer = false
+                }, delay);
+            }
+        }
+
+    }
+
+    let ccd = () => {
+        console.log(countData++)
+    }
+    let deb = deboun(ccd, 1000)
+    let abcc = document.getElementById('abc');
+    abcc.addEventListener('keypress', deb);
+
+
+
+    function abcd(val) {
+        let count = val;
+        function def(val2) {
+            return count = count * val2
+        }
+        return def;
+    }
+    let yy = abcd(5);
+    console.log(yy(10))
+    console.log(yy(29))
+    console.log(yy(30))
+
+
 </script>
 
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <h1>Curry function</h1>
+
+
+    <script>
+
+        function a(v1) {
+            let _a1 = v1;
+            function b(v2) {
+                let _a2 = v2;
+                function c(v3) {
+                    let _a3 = v3;
+                    return _a1 = _a1 + _a2 + _a3;
+                }
+                return c;
+            }
+            return b;
+        }
+
+        let aa = a(10)(20)(30);
+        console.log(aa)
+        /* let aaa = aa(20); */
+        // let aaaa = aaa(30)
+        /*  console.log(aaa(30))
+         console.log(aaa(30))
+         console.log(aaa(30))
+         console.log(aaa(30))
+         console.log(aaa(30))
+         console.log(aaa(30)) */
+
+
+    </script>
+</body>
+
+</html>

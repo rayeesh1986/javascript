@@ -91,7 +91,19 @@
 
         console.dir(p())
 
-
+        function close() {
+            var f = 0;
+            let n = () => {
+                return [f++, f]
+            }
+            return n;
+        }
+        let asdf = close();
+        console.log(asdf())
+        console.log(asdf())
+        console.log(asdf())
+        console.log(asdf())
+        console.log(asdf())
 
 
     </script>
