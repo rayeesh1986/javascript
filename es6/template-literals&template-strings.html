@@ -12,7 +12,6 @@
 
 <body>
 
-
   <h1>Template string & litrals</h1>
 
 
@@ -47,14 +46,34 @@
 
     // ======================================
     //old style
-    let out = "";
-    out += '<div id="mainboxin">\
-                <div class="spacermain">\
-                  <div class="leftimg">\
-                     <img src="images/'+ arr[i].Photo + '"/>\
+    /*   let out = "";
+      out += '<div id="mainboxin">\
+                  <div class="spacermain">\
+                    <div class="leftimg">\
+                       <img src="images/'+ arr[i].Photo + '"/>\
+                     </div>\
                    </div>\
-                 </div>\
-				</div>';
+          </div>'; */
+
+
+
+
+
+    let quote = "either you run the code or code runs you";
+    let by = 'Anil Sidhu';
+    let user = "peter"
+    x = 10;
+    y = 20;
+    function fullName() {
+      return "Anil Kumar Sidhu";
+    }
+    console.log("either you run the code or code runs " +
+      "you " + by + " Hello " + user)
+
+    console.log(`either you run the code or code runs you
+    ${by} Hello ${x * y} ${fullName()}`)
+
+
   </script>
 </body>
 
