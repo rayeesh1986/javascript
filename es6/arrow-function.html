@@ -32,101 +32,52 @@
 
     <script>
 
-
+        // normal function
         /* function x(a, b) {
             return a + b;
         }
-
         console.log(x(5, 5)) */
 
+
+
         // arrow function
-        const x = (a, b) => a + b;
+        // const x = (a, b) => a + b;
         // console.log(x(5, 5));
 
 
-        // difference between regular and arrow function
+        /* console.log(this)
 
-        color = "white";
+        this.ls = "Alam"
 
-        /*   function ab() {
-              return this.color;
-          }
-  
-          console.log(ab()); */
+        this.name = "Rayeesh";
 
+        console.log(this.name)
+        console.log(window.name)
+        console.log(name, ls)
 
-        /*  const cd = () => {
-             return this.color;
-         }
- 
-         console.log(cd());
- 
- 
- 
-         let xx = [10, 20, 30, 40, 50, 60, 70, 80];
- 
-         const m = xx.map(function (item) {
-             return item * 2
-         })
-         console.log(m);
- 
- 
-         const n = xx.map(item => item * 2);
-         console.log(n) */
-
-        /// it is very simple to use 
-        // and arrow func ka apna koi this nahi hota hai
+        console.log(innerHeight)
 
 
-        let p = {
-            name: "Rayeesh",
-            age: 34,
-            tech: "js",
-            normalFunction: function () {
-                return `My name is ${this.name}`;
-            },
-
-        }
-
-        const arrowFunction = function () {
-            console.log(`My name is ${this.name} and Alam`);
-        }
-        /*  console.log(p.normalFunction());
- 
-         const normalFunction = p.normalFunction.bind(p);
-         console.log(normalFunction()); */
-
-        const amn = arrowFunction.bind(p)
-
-        console.log(amn())
-
-        //console.log(p.normalFunction());
-
-        /*   const y = p.arrowFunction();
-  
-          console.log(y)
-   */
-
-
-        let bb = () => {
-            var add = 2 + 3;
-
-            console.log(`Added value is ${add}`);
-            console.log(this);
-        }
-        // this keyword firstly check own ap
-
-
-        bb()
-
-
-        console.log(this)
-        function a() {
+        function checkThis() {
             console.log(this)
         }
-        // it will return window object
-        a();
 
+        checkThis(); */
+
+
+        const person = {
+            checkOther: function () {
+                console.log(this)
+
+                function xxx() {
+                    console.log(this)
+                }
+
+                xxx()
+            }
+        }
+
+        person.checkOther()
 
 
 

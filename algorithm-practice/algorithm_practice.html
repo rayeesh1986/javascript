@@ -10,6 +10,27 @@
 </body>
 <script>
 
+    // var is working in functional scope
+    function abc() {
+        if (true) {
+            var _b5 = 2566666;
+        }
+        console.log(_b5);
+    }
+    abc();
+
+    //hoisting Question console.log will print
+    function textData() {
+        setTimeout(() => {
+            console.log(i)
+        }, 1000);
+        var i = 10;
+    }
+    textData();
+
+
+
+
     // remove duplicate array
     let g1 = [2, 3, 4, 56, 6, 7, 9, 88, 66, 7, 8, 18, 55, 55, 55];
     let uniq = [...new Set(g1)];
@@ -130,7 +151,7 @@
 
     console.log("=============================================");
     // filter and duplicate remove data
-    let g1 = [2, 3, 4, 56, 6, 7, 9, 88, 66, 7, 8, 18, 55, 55, 55];
+    let g2 = [2, 3, 4, 56, 6, 7, 9, 88, 66, 7, 8, 18, 55, 55, 55];
     let num = 6;
     function filterdata(a, n) {
         let h = [];
@@ -144,7 +165,7 @@
         return h
     }
 
-    console.log(filterdata(g1, num))
+    console.log(filterdata(g2, num))
 
 
     console.log("=============================================");
@@ -255,13 +276,13 @@
         return [a, b];
     }
 
-    let m = getData(arr)
-    console.log(m[0])
+    let m0 = getData(arr)
+    console.log(0[0])
 
 
     console.log("======================================");
     console.log("first letter caplital");
-    let str = "mastering data structures algorithms using expert led Courses. Hands-on projects.";
+    let str22 = "mastering data structures algorithms using expert led Courses. Hands-on projects.";
     function capLetter(strig) {
         let s = strig.split(" ");
         let c = [];
@@ -272,7 +293,7 @@
         }
         return c.join(" ")
     }
-    console.log(capLetter(str))
+    console.log(capLetter(str22))
 
 
 

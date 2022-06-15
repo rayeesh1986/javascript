@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Promise</h1>
+
+    <div id="demo">Promise</div>
+
+
+    <script>
+
+        /* const promiseData = new Promise((resolve, reject) => {
+            let req = true;
+            if (req === true) {
+                resolve([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+            } else {
+                reject(`Get some server errors`);
+            }
+        });
+
+        promiseData.then((value) => {
+            console.log("get this value result", value)
+        }).catch((error) => {
+            console.log(error)
+        }).finally(() => {
+            console.log("finally code has done")
+        });
+ */
+        //  promiseData;
+
+
+
+        /* function c4() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("1");
+                    console.log("step 2")
+                }, 3000);
+
+            })
+        }
+
+        function c5() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("1");
+                    console.log("step 3")
+                }, 1000);
+
+            })
+        }
+
+        let asd = async () => {
+
+            let hj = await c4();
+            let hj2 = await c5();
+            console.log("step 1")
+        } */
+
+        // asd();
+
+
+        // finally function use in promise ye dono case me chalte hai. promise resolve ho yareject ho.
+        function p1_finally() {
+            const resp = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([1, 2, 3, 4, 5]);
+                }, 2000);
+            }).then((data) => {
+                console.log("Data", data)
+            }).catch((error) => {
+                console.log("Error", error)
+            }).finally(() => {
+                console.log("Final data has done")
+            })
+            return resp
+        }
+
+        // console.log(p1_finally())
+
+        // .all 
+        const resp_p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // console.log("Zero resovle")
+                //resolve([1, 2, 3, 4, 5]);
+                reject(new Error())
+            }, 2000);
+        });
+
+        const resp_p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // console.log("Second resovle")
+                //resolve([6, 7, 8, 9, 10]);
+                reject(new Error())
+            }, 1000)
+        });
+
+        const resp_p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // console.log("Third resovle")
+                resolve([11, 12, 13, 14, 15]);
+                // reject(new Error())
+            }, 3000);
+        });
+
+        // ye batata hai agar all promise have resolved so it will go in the then function or any promise has rejected so it will go in the catch function
+        /* Promise.all([resp_p1, resp_p2, resp_p3])
+            .then((result) => {
+                console.log(`Result ${result}`);
+            }).catch((error) => {
+                console.log("Error data", error);
+            }) */
+
+        // it is tell to us how many promise has resolve and reject.
+        /* Promise.allSettled([resp_p1, resp_p2, resp_p3])
+            .then((result) => {
+                console.log("Result", result);
+            }).catch((error) => {
+                console.log("Error data", error);
+            }) */
+        // it is tell to us first first resolve or reject value jo bhi milti hai usko leke dikha dega.
+        Promise.race([resp_p1, resp_p2, resp_p3])
+            .then((result) => {
+                console.log("Result", result);
+            }).catch((error) => {
+                console.log("Error data", error);
+            })
+        // ye promise me koi bhi resolve hota hai to usko dikha deta hai agar sabhi promise reject ho jate hai to useko dekha deta hai
+        /*  Promise.any([resp_p1, resp_p2, resp_p3])
+             .then((result) => {
+                 console.log("Result hi", result);
+             }).catch((error) => {
+                 console.log("Error data", error);
+             }) */
+
+
+
+        /* let p_final = async () => {
+            await p1();
+            console.log("First resovle");
+            await p2()
+            await p3()
+        } */
+        //p_final()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

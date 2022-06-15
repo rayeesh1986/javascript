@@ -21,8 +21,7 @@
 
     <h1>Array Destructuring</h1>
 
-
-    <script>
+    <pre>
         let a = ["css", "html", "php", "js", "phyton"];
         let b = ["css", "html", "php", "js", "phyton"];
 
@@ -70,18 +69,40 @@
         console.log(rest1.n4);
         console.log(rest1);
 
+    </pre>
 
 
-        console.log("=====================================================================")
-        // Enhanced Object Literals in ES6
-        function getLaptop(make, model, year) {
-            return {
-                make,
-                model,
-                year
+    <script>
+
+
+
+
+        console.log("=====================================================================");
+
+        let [a, b, c, d, e, f, ...g] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        // console.log(f)
+        //console.log(g)
+
+
+        let [a1, b1, c1, ...rest] = [2, 4, 6, 10, 15, 17, 19];
+        // console.log(rest);
+
+
+        let obj = {
+            name: "Rayeesh",
+            degree: {
+                classn: {
+                    c: {
+                        course: "MBA"
+                    }
+                }
             }
         }
-        console.log(getLaptop("Apple", "MacBook", "2015"))
+
+        let { name, degree: { classn: { c: { course: dd } } } } = obj
+
+        console.log(name, dd)
+
 
 
     </script>

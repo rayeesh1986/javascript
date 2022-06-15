@@ -59,10 +59,30 @@
         // after sorting it will create same array returns you in new array.
         console.log(a);
 
+        const points = [40, 100, 1, 5, 25, 10];
+        const p1 = points.sort(function (a, b) {
+            return a - b;
+        })
+        console.log(points)
+
 
         const array1 = [1, 30, 4, 21, 5, -2, -5];
         array1.sort();
+
+        // it will not return a proper sequence so that we have to use inside a sorting function
         console.log(array1);
+        console.log("=========================")
+        array1.sort((a, b) => {
+            console.log(a, b)
+            // a - b
+        });
+
+
+
+        // for reverse sorting number array1.sort((a, b) => b - a);
+        console.log(array1);
+        console.log("=========================")
+
         // Sort end
 
 

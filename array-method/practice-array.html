@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Practice</h1>
+
+    <script>
+
+        let arr = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+
+        console.log("=================== sort & reverse ================================")
+        // sort array method
+        let a1 = arr.sort();
+        // it is sorting according to numaric but it is not the proper way
+        console.log(a1)
+        let a2 = arr.sort((a, b) => a - b);
+        console.log(a2)
+
+        // reverse array method
+        console.log(a2.reverse())
+
+
+
+        const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+        const plants_2 = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+        console.log("=================== pop & push ================================")
+        // pop array method
+        let a3 = plants.pop();
+        // it return new array
+        console.log(plants)
+        // it return remove array value
+        console.log(a3)
+
+        // push array method
+        let a4 = plants.push("test", "test 1", "test 2");
+        // it return new array
+        console.log(plants)
+        // it return array new length
+        console.log(a4)
+
+
+
+
+        console.log("=================== shift & unshift ================================")
+        // shift array method ye remove karta hai array ke starting me 
+        let a5 = plants.shift();
+        // it return new array
+        console.log(plants)
+        // and first remove element ko deta hai
+        console.log(a5)
+
+        // unshift array method ye add karta hai array ke starting me 
+        let a6 = plants.unshift("t1", "t2");
+        // it return new array
+        console.log(plants)
+        // and ye array ki length ko batata h
+        console.log(a6)
+
+
+
+
+        console.log("=================== concat & join ================================")
+        // hum do ya do se jyada array ki jod sakte h aur ye new array deta hai exiting array me change nahi karta hai
+        let a7 = plants.concat(plants_2, plants);
+        // it return new array
+        console.log(a7);
+
+        // join ye cancat karta hai and returns a new string
+        let a8 = plants.join(" ") // we can replace with ("") or (" ") or (" - ") 
+        // note If an element is undefined, null or an empty array [], it is converted to an empty string.
+        // ye existing array me change nahi karta
+        console.log(plants)
+        // ye new string return karta h
+        console.log(a8)
+
+
+
+        console.log("=================== isArray ================================")
+        // ye check karta hai ki jo pass kiya hai wo array hai ya nahi true or false ko batata hai.
+        let a9 = Array.isArray(plants);
+        console.log(a9)
+
+
+
+        console.log("=================== indexOf & lastIndexOf ================================")
+        const plants_3 = ['b', 'c', 'd', 'e', 'f', 'b', 'c', 'd', 'e', 'f'];
+        // ye vlue leta hai aur uske index ko batata hai and second parameter ye batata hai ki start kakhan se karna hai wo uske baane se element ko search karta hai 
+        let a10 = plants_3.indexOf("c", 2);
+        console.log(a10)
+
+        // ye last se array ko check jkarta hai aur unke index ko batata h agar index value nahi milti to ye return -1 karta hai
+        let a11 = plants_3.lastIndexOf("c", 5);
+        console.log(a11)
+
+
+        console.log("=================== includes ================================")
+        // ye array me value ko check karta hai aur true false deta hai
+        //array.includes("value", searchfrom);
+        let a12 = plants_3.includes("c", 2);
+        console.log(a12)
+
+
+
+        console.log("=================== some & every ================================")
+        // ye ek callback function leta hai aur condintion check karte hai ki ek bhi condition true hoti hai ye true dega otherwise false dega
+        let a13 = arr.some((arr) => arr > 10);
+        console.log(a13)
+
+        // ye ek callback function leta hai aur condintion check karte hai ki isme ek bhi condition false hoti hai to ye false return karta hai
+        let a14 = arr.every((arr) => arr > 10);
+        console.log(a14)
+
+
+
+        console.log("=================== find & findIndex ================================")
+        let array_find = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+        // ye function array ki value ko find karte hai agar nhi milta means condition satisfy nahi hoti to undefined deta hai.
+        let a15 = array_find.find((array) => array > 10);
+        console.log(a15)
+
+        // ye function array ki value ko find karte hai aur uska index return karta hai agar nhi milta means condition satisfy nahi hoti to return -1 karta hai.
+        let a16 = array_find.findIndex((array) => array > 10);
+        console.log(a16)
+
+
+
+        console.log("=================== toString ================================")
+        const plants_toString = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+        // ye array ko string me convert kar deta hai
+        let a17 = plants_toString.toString();
+        console.log(a17)
+
+
+
+        console.log("=================== fill ================================")
+        const plants_fill = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+        // ye array ki value ko new value se fill karta hai aur kahan se start karna hai aur kahan se end karna hai de sakte hai
+        // let a18 = plants_fill.fill(value, start, end);
+        let a18 = plants_fill.fill("test", 2, 4);
+        console.log(a18)
+
+        console.log("=================== filter ================================")
+        const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+        // it is take a callback function and condition me jo pass array will return a new array
+        let a19 = words.filter((arr) => arr.length > 6);
+        console.log(a19)
+
+
+        console.log("=================== at ================================")
+        // ye array ki length ki value ko return karta hai starting ye 0 se leta hai aur laste -1 se leta hai
+        let a20 = words.at(-1);
+        console.log(a20)
+
+
+        console.log("=================== flat ================================")
+        const a21 = [0, 1, 2, [3, 4]];
+        console.log(a21.flat()); // ye single array ko flat array me convert karta hai 
+        // expected output: [0, 1, 2, 3, 4]
+
+        const arr2 = [0, 1, 2, [[[3, 4]]], 5, 6];
+        console.log(arr2.flat(2));
+
+
+        const arr3 = [0, 1, 2, [[[3, 4]], 5, 6], 7, 8, 9, 10];
+        console.log(arr3.flat(Infinity))
+
+
+
+        console.log("=================== map ================================")
+        // map method creates a new array populated with the results
+        const arr_map = [0, 1, 2, 3, 45, 6, 7, 8, 9, 10];
+        const a22 = arr_map.map((item, index) => item * 2)
+        console.log(a22)
+
+
+
+        console.log("=================== slice & splice ================================")
+        // 
+        const arr_s1 = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10];
+        const a23 = arr_s1.slice(4, 7) // slice(start => kahan se start karna h, end => kahan tak end karna h) ye ek new array bana degi
+        console.log(a23)
+
+        const arr_sl1 = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10,];
+        const a24 = arr_sl1.splice(2, 3, "test 1", "test 2") // splice(start, how many delete next values, add new values)
+        // ye remove array ko batata h 
+        console.log(a24)
+        // ye ek new return deta h with updated array
+        console.log(arr_sl1);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

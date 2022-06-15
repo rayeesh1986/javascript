@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Object.assign()</h1>
+    <pre>
+        The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+    </pre>
+    <script>
+        const target_1 = { a: 1, b: 2, c: 3 }
+        const source_1 = { a: 5, n: 8, n: 3, c: 9 }
+        // Object.assign(target, source)
+        const result_1 = Object.assign(target_1, source_1)
+        result_1.a = 55
+        console.log(result_1);
+        console.log(source_1);
+        console.log("=======================================")
+    </script>
+
+
+    <h1>Object.create()</h1>
+    <pre>
+        The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
+</pre>
+    <script>
+        const target_2 = { a: 8888, b: 2, c: 3 }
+        /* delete target_2.a;
+        console.log(target_2) */
+        // Object.create()
+        const result_2 = Object.create(target_2)
+        console.log(result_2);
+        console.log(result_2.a);
+    </script>
+</body>
+
+</html>

@@ -15,60 +15,50 @@
 
     <h1>Var, Let, Const</h1>
 
+    <p>The var statement declares a function-scoped or globally-scoped variable, optionally initializing it to a value.
+    </p>
+    <p>The let statement declares a block-scoped local variable, optionally initializing it to a value.</p>
+    <p>Constants are block-scoped, much like variables declared using the let keyword. The value of a constant can't be
+        changed through reassignment (i.e. by using the assignment operator), and it can't be redeclared (i.e. through a
+        variable declaration). However, if a constant is an object or array its properties or items can be updated or
+        removed.</p>
 
-    <script async defer>
-        /* var */
-        /* var x = "rayeesh";
-        x = "Alam";
-        console.log(x) */
+    =====================================================================================
 
+    <pre>
+        Hoisting means that you can define a variable before its declaration.
+        var = Allowed
+        let, const = Not allowed
+        b = "hello"
+        console.log(b)
+        var b;
+    </pre>
 
-        /* let */
-        /* let x = "rayeesh 2";
-        x = "Alam 2";
-        console.log(x) */
-
-
-        /* const */
-        /* const x = "rayeesh 3";
-        x = "Alam 3";
-        console.log(x) */
-        // it will through that error because it is const value it can't be changed.
-
-
-        /*
+    <pre>
         function myFunc(xyz) {// here is start function scope
-
-            if (xyz) { // here is start block scope
+            if (xyz) { 
+            // here is start block scope
                 const x = "Hello";
                 let y = "world";
                 var z = "second world";
-
                 console.log("my name is" + " " + x + " " + y)
-
                 // here is end block scope
             }
-
-            console.log(z)
-
-
-            
-            // console.log(x)
-            // console.log(y)
-            //  x and y will be giving us error here because it is block scope
-            
-
-
-
-
+        
+            console.log(z) // second world
+            console.log(x) // Uncaught ReferenceError: x is not defined
+            console.log(y) // Uncaught ReferenceError: y is not defined
+            // x and y will be giving us error here because it is block scope
+                
             // here is end function scope
         }
-
-        myFunc(true) */
+        myFunc(true)
+    </pre>
+    =====================================================================================
+    <pre>
         var a = "china";
         function c() {
             a = "india";
-
             if (a) {
                 a = "nepal"
                 console.log(a);
@@ -80,142 +70,130 @@
         }
         c();
         a = "bhutan";
-
         console.log(window);
 
+        // nepal
+        // pakistan
+        // nepal
+        // bhutan
+    </pre>
 
-        let a1 = "india";
-
-        if (true) {
-            let a1 = "bangal";
-            console.log(a1)
-        }
-
-        console.log(a1)
-
-
-
-
-
-        //global scope
-        let aw = 10;
-        let x = true;
-        const mm = 20;
-
-        console.log(aw + " this " + mm)
-
-        // local scope
-        function bw() {
-            // function scope
-            const mm = 30;
-            let aw = 8;
-            aw = aw + 1;
-            console.log(aw + " that " + mm);
+    <script>
+        // var is working in functional scope
+        function abc() {
             if (true) {
-                // block scope
-                let aw = 5;
-                console.log(aw + "========================= " + mm)
-            }
-
-            console.log(aw + " that " + mm);
-        }
-        bw();
-
-
-        if (x) {
-            // block scope
-            let aw = 5;
-            console.log(aw + " " + mm)
-        }
-
-        // var aw = 30;
-        console.log(aw + " final " + mm)
-
-
-
-
-
-        let bb = [1, 2, 3, 4, 5, 6, 7]
-
-
-        function yy(i, v) {
-            console.log(i + "========" + v)
-        }
-
-        bb.forEach(yy);
-
-        let obj = {
-            aa: 10,
-            dd: function () {
-                console.log(this.aa)
-            },
-            cc: (obj) => {
-                console.log(obj.aa)
-            }
-        }
-
-        obj.dd();
-        obj.cc(obj);
-
-
-
-
-        console.log("=============================================")
-        var abc = "hello";
-
-        const cd = () => {
-            var dd = 100;
-            var cc = true;
-            if (cc) {
-                let ee = 12;
-                console.log(dd);
-            }
-            // console.log(ee)
-            console.log(abc);
-        }
-        cd();
-
-        let vv = 10;
-
-        function cv() {
-            vv = 20;
-
-            if (vv) {
-                vv = 30;
-                console.log(vv)
-                cc = 60;
-                vv = 70
-
-            }
-            console.log(vv)
-        }
-
-        cv();
-
-
-
-
-        console.log("=============================================");
-
-
-        let _b = 1;
-        function _b1() {
-            console.log(_b)
-            let _b2 = true;
-            let _b4 = "Hello";
-            if (_b2) {
-                let _b3 = 5;
-                var _b5 = 25;
-                console.log(_b3);
-                console.log(_b4)
+                var _b5 = 2566666;
             }
             console.log(_b5);
-            // console.log(_b3);
+        }
+        abc();
+
+        // let is not working in block scope
+        function abc_1() {
+            if (true) {
+                let _b5 = 777777;
+            }
+            // leat is a block scope so that it will return reference error
+            // console.log(_b5);
+        }
+        abc_1();
+
+
+        // result will be 10 because of hoisting var moving the top in out scope
+        function abc_2() {
+            setTimeout(() => {
+                console.log(i)
+            }, 100);
+            let i = 10;
+        }
+        //  abc_2();
+
+
+        let z = 13;
+        if (true) {
+            let z = "Fun"; //works without any error as scope is different.
+            console.log(z) //prints "Fun"
+        }
+        console.log(z) //prints 13
+
+
+        // ans will be -10 because of scoping
+        var a1 = 10;
+        if (true) {
+            var a1 = -10;
+        }
+        let b1 = a1;
+        if (true) {
+            let b1 = -20;
+        }
+        console.log(b1)
+
+
+        // 5 then 6 will be print
+        function foo() {
+            var n = 6;
+            console.log(n);
         }
 
-        _b1()
+        var n = 5;
+        console.log(n);
+        foo();
 
 
+        //code will throw an error ans - 6 then error because num is out of scope because using let.
+        function foo(n) {
+            if (n == 6) {
+                let num = 2;
+            }
+            // console.log(num);
+        }
+
+        var n = 6;
+        console.log(n);
+        foo(6);
+
+
+        //code will throw an error in 2nd loop and first loop will work
+        for (var i = 0; i < 3; i++) {
+            console.log(i)
+        }
+        console.log("i outside the loop: ", i);
+
+        for (let j = 0; j < 3; j++) {
+            console.log(j);
+        }
+
+        //console.log("j oustide the loop :", j);
+
+
+        // it will return error because we can not redeclare let value in a same block scope 
+        /* function foo2(n) {
+            let ss = 10
+            if (n == 6) {
+                var ss = 55555555555552;
+                console.log(ss);
+            }
+        }
+        foo2(6); */
+
+
+        // 
+        function foo3() {
+            console.log(nn)
+            var nn = 4444;
+        }
+        foo3()
+
+
+        //  var let const
+
+
+        var as = 10;
+
+        var as = 20;
+
+
+        console.log(as)
 
 
     </script>

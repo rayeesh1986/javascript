@@ -22,11 +22,26 @@
 
         const numbers = [1, 2, 3];
         console.log(numbers);
+        console.log("=====================")
         console.log(sum(...numbers));
         // expected output: 6
+        console.log("=====================")
 
         console.log(sum.apply(null, numbers));
         // expected output: 6
+
+
+        let person = {
+            name: "Rayeesh",
+            cls: "MBA"
+        }
+
+
+        let p1 = { ...person };
+        p1.name = "Ayesha"
+
+        console.log(person)
+        console.log(p1)
 
 
     </script>
