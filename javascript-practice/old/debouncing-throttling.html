@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body style="height: 2000px;">
+    <h1>Debouncing</h1>
+
+    <input type="text" name="" id="db" />
+
+    <!-- <button id="abc">Click</button> -->
+    <h3>Debouncing</h3>
+    <input type="text" name="" id="def" />
+    <input type="text" name="" id="i_data" />
+
+
+
+    <h3>Throttling</h3>
+    <input type="text" name="" id="abc" />
+
+
+    <script>
+
+        // debouncing function method 1
+        /* let count = 0;
+        let y = function (fn, delay) {
+            let debounceTimer;
+            console.log(" hi") 
+            return function () { 
+                clearTimeout(debounceTimer); 
+                debounceTimer=setTimeout(()=> {
+                fn()
+                }, delay);
+            }
+        }
+
+        let incrementDebouncing = () => {
+        console.log("hello", count++)
+        }
+
+        let m = y(incrementDebouncing, 2000)
+        document.addEventListener('scroll', m) */
+
+        // javascript debouncing works, after call a certain time limit.
+        // debouncing function method 2
+        let debouncingBtn = document.getElementById('def')
+        let count = 0;
+        let y = function (fn, delay) {
+            let context = this
+            let args = arguments
+            let debounceTimer;
+            return function () {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    fn.apply(context, args)
+                }, delay);
+            }
+        }
+
+        let incrementDebouncing = () => {
+            console.log("hello", count++)
+        }
+        let m = y(incrementDebouncing, 1000)
+        debouncingBtn.addEventListener('keyup', m);
+
+
+
+        // javascript throlling works it a certain time limit.
+        let throttleBtn = document.getElementById('abc');
+        const throttle = (func, limit) => {
+            let inThrottle
+            return function () {
+                const args = arguments
+                const context = this
+                if (!inThrottle) {
+                    func.apply(context, args)
+                    inThrottle = true
+                    setTimeout(() => inThrottle = false, limit)
+                }
+            }
+        }
+        throttleBtn.addEventListener('keyup', throttle(function () {
+            return console.log(this.value);
+        }, 3000));
+
+
+
+        /* let count = 0;
+        let debouncing = (fn, delay) => {
+            var timer;
+            return function () {
+                clearTimeout(timer)
+                timer = setTimeout(() => {
+                    fn()
+                }, delay);
+            }
+        }
+        let a = () => {
+            console.log(count++)
+        }
+        let b = debouncing(a, 1000)
+        let input = document.getElementById('db');
+        input.addEventListener('keyup', b); */
+
+
+        /* let count = 0;
+        let debouncing = (fn, delay) => {
+            var timer;
+            return function () {
+                clearTimeout(timer)
+                timer = setTimeout(() => {
+                    fn()
+                }, delay);
+            }
+        }
+
+        let a = () => {
+            console.log(count++)
+        }
+        let b = debouncing(a, 1000)
+        let input = document.getElementById('vv');
+        input.addEventListener('click', b); */
+
+
+        let count1 = 0;
+        function debouncing1(fn, delay) {
+            var timer;
+            return function () {
+                clearTimeout(timer)
+                timer = setTimeout(() => {
+                    fn()
+                }, delay);
+            }
+
+        }
+
+        const cc = () => {
+            console.log(count1++)
+        }
+
+        let bbb = debouncing1(cc, 2000);
+        let input = document.getElementById('db');
+        input.addEventListener('keyup', bbb);
+
+
+        let asd = function (a, b, v) {
+            this.a = a;
+            this.b = b;
+
+            this.gert = function (v) {
+                console.log(`this is ${a} and ${b} and ${v}`);
+            }
+
+        }
+
+        let df = new asd("sumsung", "mobile");
+
+        asd.prototype.p4 = function (v) {
+            console.log(`this is ${this.a} and ${this.b} and ${v}`);
+        }
+
+
+
+        console.log(df.p4("sam"))
+
+
+
+        let isPrime = {
+            name: "rayeesh",
+
+            getname() {
+                console.log(this)
+            }
+        }
+        var bbbb = 3
+
+        console.log(isPrime)
+    </script>
+</body>
+
+</html>

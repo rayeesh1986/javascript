@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Ecma script Tutorial</title>
+</head>
+
+<body>
+    <h1>Modules</h1>
+    <!--  <script src="app.js" type="module"></script> -->
+
+    <script type="module">
+
+        import sum, { minus as min, multi, divition, modules } from './user.js';
+
+        console.log(sum(2, 5));
+        console.log(min(2, 5))
+        console.log(multi(2, 5))
+        console.log(divition(2, 5))
+        console.log(modules(10, 4))
+
+    </script>
+</body>
+
+</html>

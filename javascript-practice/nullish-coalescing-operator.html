@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Nullish coalescing operator</h1>
+</body>
+<script>
+
+
+
+    // we can check undefined, null value
+    const obj = {
+        /* name: "Jhon doe", */
+        age: 25
+    }
+    console.log(obj.name ?? "Default Name")
+
+
+    const obj_1 = {
+        name: "Jhon doe",
+        age: null
+    }
+    let c = obj_1.age ?? "Rajesh";
+    console.log(c)
+    console.log("==================================")
+
+    // we can't check empty and boolean
+    const obj_2 = {
+        name: "Jhon doe",
+        age: ""
+    }
+    let c_2 = obj_2.age || "Rajesh 2";
+    console.log(c_2);
+
+
+    const obj_3 = {
+        name: "Jhon doe",
+        age: 0
+    }
+    let c_3 = obj_3.age || "Rajesh 3";
+    console.log(c_3)
+
+
+</script>
+
+</html>

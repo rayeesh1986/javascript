@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Strict Mode</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <script>
+        // without declaration we can't get any error but use strict mode if we can't declare (var, let, const) we get error on the page.
+
+
+        //'use strict';
+        l = 10;
+        console.log(l)
+
+        // ex-2
+        a = (b, c) => {
+            const d = b + c;
+            console.log(d)
+        }
+
+        a(2, 3)
+    </script>
+</body>
+
+</html>

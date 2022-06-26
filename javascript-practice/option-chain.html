@@ -2,69 +2,33 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+
 </head>
 
 <body>
-
-    <pre>
-        The optional chaining operator (?.) enables you to read the value of a property located deep within a chain of connected 
-        objects without having to check that each reference in the chain is valid.
-    </pre>
-
-    <script>
-
-        const adventurer = {
-            name: 'Alice',
-            cat: {
-                name: 'Dinah'
-            },
-
-            someNonExistentMethod() {
-                return ("a")
-            }
-        };
-
-        const dogName = adventurer.dog?.name;
-        console.log(dogName);
-        // expected output: undefined
-
-        console.log(adventurer.someNonExistentMethod?.());
-        // expected output: a
-
-        console.log(adventurer.someNonExistentMethod2?.());
-        // expected output: undefined
-
-        console.log("================ Option chain example ========================")
-        // optional chaining me hum obj ko multi level tak check kar sakte hai without any check lagaye hue.
-        // check means
-        /* 
-            if(objData.data && objData.data.d1){
-
-            }
-            but in option chaning me 
-
-            if(objData?.data?.d1){
-
-            }
-        */
-        let objData = {
-            name: "John",
-            school: "10th",
-            num: 24,
-            data: {
-                d1: 34,
-                d2: 35
-            }
-        };
-        const fvd = objData?.name?.val?.data;
-        console.log(fvd)
-    </script>
+    <h1>Option Chain</h1>
 </body>
+<script>
+
+    const obj = {
+        name: "Jhon Doe",
+        age: 25,
+        education: {
+            class: "MBA",
+            rollNo: 21
+        }
+    }
+
+    // by default value object me na milne pe undefined ki error aati h isse bachne ke liye isko use karte hai
+
+    //let getObj = obj.education.name.value;
+    // console.log(getObj);
+
+
+    // ye object me value na milne pe error se banchata hai
+    let getValue = obj?.education?.name?.value;
+    console.log(getValue)
+
+</script>
 
 </html>

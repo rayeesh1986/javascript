@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
 
 <head>
@@ -19,39 +19,37 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <h1>Default Parameter</h1>
+    <h1>Execution Context</h1>
+
+
+
+
 
     <script>
-        // first condition
-        function multi(a, b = 5) {
-            return a * b
-        }
-        console.log(multi(4));
-        // or
-        function multi1(a, b) {
-            if (typeof b === "undefined") {
-                b = 5
-            }
-            return a * b
-        }
-        console.log(multi1(6));
-        // or
-        function multi2(a, b = 5) {
-            return a * b
-        }
-        console.log(multi2(7, 10));
 
-        // or
-        const multi3 = (a, b = 5) => a * b;
-        console.log(multi3(8));
+        var global = 'added'
 
-
-        function f(x, y = 12) {
-            // y is 12 if not passed (or passed as undefined)
-            return x + y;
+        function a() {
+            var fa = "first function called";
+            console.log(fa)
+            debugger;
+            b();
+            console.log("first function last line code");
         }
-        f(3)
-        // output 15
+
+        function b() {
+            debugger;
+            c();
+            console.log("second function last line code");
+        }
+
+        function c() {
+            debugger;
+            console.log("third function last line code");
+        }
+        debugger
+        a()
+
     </script>
 </body>
 

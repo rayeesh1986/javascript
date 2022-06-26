@@ -19,7 +19,14 @@
 
     <script>
 
+
+
         let arr = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+        console.log("=================== at ================================")
+        // at array method
+        // we can get the value of array index, and it is fast to length element
+        console.log(arr.at(-1));  // output 85
+        console.log(arr[arr.length - 1]) // output 85
 
         console.log("=================== sort & reverse ================================")
         // sort array method
@@ -31,8 +38,6 @@
 
         // reverse array method
         console.log(a2.reverse())
-
-
 
         const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
         const plants_2 = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
@@ -50,9 +55,7 @@
         // it return new array
         console.log(plants)
         // it return array new length
-        console.log(a4)
-
-
+        console.log(a4);
 
 
         console.log("=================== shift & unshift ================================")
@@ -70,9 +73,6 @@
         // and ye array ki length ko batata h
         console.log(a6)
 
-
-
-
         console.log("=================== concat & join ================================")
         // hum do ya do se jyada array ki jod sakte h aur ye new array deta hai exiting array me change nahi karta hai
         let a7 = plants.concat(plants_2, plants);
@@ -87,14 +87,10 @@
         // ye new string return karta h
         console.log(a8)
 
-
-
         console.log("=================== isArray ================================")
         // ye check karta hai ki jo pass kiya hai wo array hai ya nahi true or false ko batata hai.
         let a9 = Array.isArray(plants);
         console.log(a9)
-
-
 
         console.log("=================== indexOf & lastIndexOf ================================")
         const plants_3 = ['b', 'c', 'd', 'e', 'f', 'b', 'c', 'd', 'e', 'f'];
@@ -113,8 +109,6 @@
         let a12 = plants_3.includes("c", 2);
         console.log(a12)
 
-
-
         console.log("=================== some & every ================================")
         // ye ek callback function leta hai aur condintion check karte hai ki ek bhi condition true hoti hai ye true dega otherwise false dega
         let a13 = arr.some((arr) => arr > 10);
@@ -124,8 +118,6 @@
         let a14 = arr.every((arr) => arr > 10);
         console.log(a14)
 
-
-
         console.log("=================== find & findIndex ================================")
         let array_find = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
         // ye function array ki value ko find karte hai agar nhi milta means condition satisfy nahi hoti to undefined deta hai.
@@ -134,17 +126,13 @@
 
         // ye function array ki value ko find karte hai aur uska index return karta hai agar nhi milta means condition satisfy nahi hoti to return -1 karta hai.
         let a16 = array_find.findIndex((array) => array > 10);
-        console.log(a16)
-
-
+        console.log(a16);
 
         console.log("=================== toString ================================")
         const plants_toString = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
         // ye array ko string me convert kar deta hai
         let a17 = plants_toString.toString();
         console.log(a17)
-
-
 
         console.log("=================== fill ================================")
         const plants_fill = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
@@ -157,13 +145,7 @@
         const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
         // it is take a callback function and condition me jo pass array will return a new array
         let a19 = words.filter((arr) => arr.length > 6);
-        console.log(a19)
-
-
-        console.log("=================== at ================================")
-        // ye array ki length ki value ko return karta hai starting ye 0 se leta hai aur laste -1 se leta hai
-        let a20 = words.at(-1);
-        console.log(a20)
+        console.log(a19);
 
 
         console.log("=================== flat ================================")
@@ -174,11 +156,8 @@
         const arr2 = [0, 1, 2, [[[3, 4]]], 5, 6];
         console.log(arr2.flat(2));
 
-
         const arr3 = [0, 1, 2, [[[3, 4]], 5, 6], 7, 8, 9, 10];
         console.log(arr3.flat(Infinity))
-
-
 
         console.log("=================== map ================================")
         // map method creates a new array populated with the results
@@ -187,19 +166,52 @@
         console.log(a22)
 
 
-
         console.log("=================== slice & splice ================================")
         // 
         const arr_s1 = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10];
-        const a23 = arr_s1.slice(4, 7) // slice(start => kahan se start karna h, end => kahan tak end karna h) ye ek new array bana degi
+        // arr.slice(start index, end index) and it returns a new array
+        const a23 = arr_s1.slice(4, 7) // slice(start => kahan se ndex start karna h, end => kahan tak index end karna h) ye ek new array bana degi
         console.log(a23)
 
         const arr_sl1 = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10,];
+        // arr.splice(start index, delete end index value, add new values) and it returns updated array
         const a24 = arr_sl1.splice(2, 3, "test 1", "test 2") // splice(start, how many delete next values, add new values)
-        // ye remove array ko batata h 
+        // ye remove array ko batata h  
         console.log(a24)
         // ye ek new return deta h with updated array
         console.log(arr_sl1);
+
+
+        console.log("==================== reduce & reduceRight ==================================")
+        const val_data = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10,];
+        const val_data2 = ["a", "b", "c", "d", "e"];
+        let getValue = val_data.reduce((accumulator, currentValue, currentIndex, array) => {
+            //console.log(accumulator, currentValue, currentIndex, array);
+            return accumulator + currentValue
+        })
+        // or 
+        let getValue2 = val_data.reduce((accumulator, currentValue, currentIndex, array) => {
+            //console.log(accumulator, currentValue, currentIndex, array);
+            return accumulator + currentValue
+        }, 10)
+
+        console.log(getValue)
+        console.log(getValue2)
+
+
+        let getValue3 = val_data2.reduceRight((accumulator, currentValue, currentIndex, array) => {
+            //console.log(accumulator, currentValue, currentIndex, array);
+            return accumulator + currentValue + currentIndex
+        })
+        // or 
+        let getValue4 = val_data2.reduceRight((accumulator, currentValue, currentIndex, array) => {
+            // console.log(accumulator, currentValue, currentIndex, array);
+            return accumulator + currentValue + currentIndex
+        }, "abc")
+
+        console.log(getValue3)
+        console.log(getValue4)
+        console.log("======================================================")
 
 
 

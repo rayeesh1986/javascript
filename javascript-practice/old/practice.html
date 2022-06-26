@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <script>
+
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        function getData(ary) {
+            let nn = []
+            for (let m = 0; m < ary.length; m++) {
+                if (!nn.includes(ary[m])) {
+                    nn.push(ary[m])
+                }
+            }
+
+            let a = [];
+            let b = [];
+            for (let i = 0; i < nn.length; i++) {
+                if (nn[i] <= 5) {
+                    a.push(ary[i]);
+                } else {
+                    b.push(ary[i]);
+                }
+            }
+            return [a, b];
+        }
+        console.log(getData(arr));
+
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                console.log(i)
+            }, i * 1000);
+        }
+
+
+
+        let reducer = (store, action) => {
+
+            switch (action.type) {
+                case CASE1: return {
+                    ...store,
+                    name: "xyz"
+                }
+
+                case CASE2: return {
+                    ...store,
+                    error: "Error found"
+                }
+
+                default: return state;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

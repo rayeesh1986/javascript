@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+  <h1>Template string & literals</h1>
+  <div id="demo">Hello</div>
+  <script>
+
+
+    // before method 
+    let m1 = "India";
+    let m2 = "Delhi"
+    let m3 = "I country name is " + m1 + " and its capital is " + m2;
+    console.log(m3)
+
+    // ======================================
+    //old style
+    const arr = [{ Photo: ["img_1.jpg", "img_2.jpg", "img_3.jpg"] }]
+    let out = "";
+    out += '<div id="mainboxin">\
+                <div class="spacermain">\
+                  <div class="leftimg">\
+                     <img src="images/'+ arr[0].Photo[0] + '"/>\
+                   </div>\
+                 </div>\
+				</div>';
+    document.getElementById("demo").innerHTML = out;
+
+    console.log("==============================================")
+
+    // this is called template string
+    //we can use back-ticked and string;
+    // ex : let a = `hello world`;
+
+    //this is called template literals.
+    // we can use a new variable in template string that is call template literals.
+    // ex : let a = `hello world ${PARAMETER}`;
+
+    // template literals benefits is we can use multi line code inside the template literals and also assign the variables.
+    let name = "Rayeesh Alam"
+    let cls = "MCA"
+
+    // template string
+    let b = `My name is My class name is`;
+
+    //template literals
+    let a = `My name is ${name}\nMy class name is ${cls}`;
+    console.log(a)
+    console.log(b)
+
+    console.log("==============================================")
+
+    let quote = "Either you run the code or code runs you";
+    let by = 'Rajah Kumar';
+    let user = "peter", x = 10, y = 20;
+
+    function fullName() {
+      return "John Doe";
+    }
+
+    console.log("either you run the code or code runs " +
+      "you " + by + " Hello " + user)
+
+    console.log(`either you run the code or code runs you
+    ${by} Hello ${x * y} ${fullName()}`)
+
+  </script>
+</body>
+
+</html>

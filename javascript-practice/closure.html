@@ -26,71 +26,38 @@
     </ul>
 
     <script>
+        console.log("=============example 1=================");
         function m() {
             let a = 10;
             function b() {
                 const c = a + 5;
                 console.log(c)
             }
-
             return b;
         }
         console.dir(m())
 
-
+        console.log("=============example 2=================");
         function nn() {
             var v = "hi rayeesh";
-
             return function () {
                 console.log(`Hello world ${v}`)
             }
         }
+        console.dir(nn())
 
-        //  console.dir(nn())
-
-
-
-
-
+        console.log("=============example 3=================");
         function cls() {
             let a = 10;
             let c = function () {
                 console.log(a)
             }
-
             return c;
         }
         result = cls();
-
         console.dir(cls());
 
-
-        console.log("hi")
-        function bb() {
-            let a = 20;
-            function cc() {
-                console.log(a)
-            }
-            return cc;
-        }
-
-        reslt = bb();
-
-        reslt()
-
-
-
-        function p() {
-            var g = 30;
-            function m() {
-                console.log(g)
-            }
-
-            return m;
-        }
-
-        console.dir(p())
-
+        console.log("=============example 4=================");
         function close() {
             var f = 0;
             let n = () => {
@@ -106,28 +73,23 @@
         console.log(asdf())
 
 
+        console.log("=============example 5=================");
+        function dataCheck() {
+            var ab = 50;
+            function cc() {
+                return c = ab++;
+            }
+            return cc;
+        }
+        let getData = dataCheck();
+        console.log(getData())
+        console.log(getData())
+        console.log(getData())
+        console.log(getData())
+
+
+
     </script>
 </body>
-
-
-<style>
-    .env_left_img {
-        float: left;
-        padding: 10px 30px 30px 0;
-        width: 50%;
-    }
-
-    .env_left_img img {
-        width: 100%;
-    }
-
-    @media only screen and (max-width: 767px) {
-        .env_left_img {
-            float: none;
-            padding: 10px 0px 20px 0;
-            width: 100%;
-        }
-    }
-</style>
 
 </html>

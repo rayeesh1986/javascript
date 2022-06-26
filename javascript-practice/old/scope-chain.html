@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- external -->
+    <!--  <script src="custom.js"></script> -->
+</head>
+
+<body>
+
+    <h1>Scope chain & lexical scope</h1>
+
+</body>
+
+<script>
+
+    var a = "hello world 0 === ";
+    function a1() {
+        var b = "hello world 1 === ";
+        a2()
+        function a2() {
+            var c = "hello world 2 === ";
+            a3()
+            function a3() {
+                var d = "hello world 3 === ";
+                function a4() {
+                    var e = "hello world 4";
+                    console.log(a + b + c + d + e);
+                }
+            }
+        }
+    }
+
+
+
+    a1();
+
+</script>
+
+</html>

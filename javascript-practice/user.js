@@ -5,4 +5,5 @@ let divition = (a, b) => a / b;
 let modules = (a, b) => a % b;
 
 
-export { sum, minus, multiplication as multi, divition, modules };
+export default sum;
+export { minus, multiplication as multi, divition, modules };

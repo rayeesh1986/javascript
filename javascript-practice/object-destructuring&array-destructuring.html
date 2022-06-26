@@ -15,11 +15,8 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-    <h1>Object Destructuring</h1>
+    <h1>Object Destructuring & Array Destructuring</h1>
 
 
     <script>
@@ -34,9 +31,9 @@
         }
 
 
-        const { name, ckass, age, hobb: { sec, first } } = a;
+        const { name, ckass, age: ageData, hobb: { sec: second, first } } = a;
 
-        console.log(`my second hobby is ${sec}`);
+        console.log(`My second hobby is ${second} riding and my ${ageData} years`);
 
 
         let obj = {
@@ -74,9 +71,20 @@
                 year
             }
         }
-        console.log(getLaptop("Apple", "MacBook", "2015"))
+        console.log(getLaptop("Apple", "MacBook", "2015"));
 
 
+
+
+        console.log("========================================")
+        // example of Array destructuring
+        let newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6];
+        let [a1, a2, ...a3] = newArray;
+        console.log(a1);
+        console.log(a2);
+        console.log(a3[0]);
+        console.log(a3[1]);
+        console.log(...a3);
     </script>
 </body>
 
