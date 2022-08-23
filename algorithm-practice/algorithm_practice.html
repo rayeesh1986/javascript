@@ -394,6 +394,101 @@
         console.log('FOOOOO');
     };
 
+
+
+    
+
+
+    function test_1() {
+            let i = 0;
+            function bmm() {
+                return i++;
+            }
+            return bmm;
+        }
+
+        console.log("====================tt==================")
+        let rrrrr = test_1();
+        console.log(rrrrr())
+        console.log(rrrrr())
+        console.log(rrrrr())
+        console.log(rrrrr())
+
+
+        console.log("=====================yy=================")
+
+        function close() {
+            var f = 0;
+            let n = () => {
+                return [f++, f]
+            }
+            return n;
+        }
+        let asdf = close();
+        console.log(asdf())
+        console.log(asdf())
+        console.log(asdf())
+        console.log(asdf())
+        console.log(asdf())
+
+
+
+        function m() {
+            let a = 10;
+            function b() {
+                const c = a + 5;
+                console.log(c)
+            }
+
+            return b;
+        }
+        console.dir(m())
+
+
+        let count = 0;
+        (function immediate() {
+            if (count === 0) {
+                let count = 1;
+                console.log(count); // What is logged?
+            }
+            console.log(count); // What is logged?
+        })();
+
+
+
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+                console.log(i); // What is logged?
+            }, 1000);
+        }
+
+        console.log("======================================")
+
+        function createIncrement() {
+            let count = 0;
+            function increment() {
+                count++;
+            }
+
+            let message = `Count is ${count}`;
+            function log() {
+                console.log(message);
+            }
+
+            return [increment, log];
+        }
+
+        const [increment, log] = createIncrement();
+        increment();
+        increment();
+        increment();
+        log(); // What is logged?
+
+        console.log("=======================================")
+
+
+
+
 </script>
 
 </html>

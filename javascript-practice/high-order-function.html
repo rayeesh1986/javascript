@@ -19,28 +19,33 @@
     <h1>High Order Function</h1>
     <p>A “higher-order function” is a function that accepts functions as parameters and/or returns a function.</p>
 
-
-
     <script>
 
-        function a(name) {
-            if (name === "rayeesh") {
-                return function (company) {
-                    console.log(`Hi ${name}. what is your company name ${company}`)
-                }
-            }
+        let obj = [
+            { name: "Ritesh", class: "BA", age: 25 },
+            { name: "Rajesh", class: "BA", age: 26 },
+            { name: "Jhon", class: "BA", age: 65 },
+            { name: "Vivek", class: "BA", age: 35 },
+            { name: "Rakesh", class: "BA", age: 45 },
+        ]
 
-            if (name === "alam") {
-                return function (company) {
-                    console.log(`Hi ${name}. what is your company name ${company}`)
-                }
-            }
+        console.log("=============example 1===================");
+        function add(a, b) {
+            return a + b
         }
+        function sum(x, y, fn) {
+            return fn(x, y)
+        }
+        console.log(sum(4, 6, add));
 
-        a("rayeesh")("envigo")
-        a("alam")("virtuous")
+        console.log("=============example 2===================");
 
-
+        let filterData = obj.filter((array) => {
+            if (array.age < 40) {
+                return array
+            }
+        })
+        console.log(filterData)
 
     </script>
 </body>
