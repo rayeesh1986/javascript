@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EM Font size</title>
+    <style>
+        /* root , html */
+        /* :root {
+            font-size: 10px;
+        }
+ */
+        body {
+            font-size: 1em
+        }
+
+        .box1 {
+            font-size: 2em
+        }
+
+        .box2 {
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <div class="box2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+            been the industry's standard dummy text ever since the 1500s.
+        </div>
+    </div>
+
+    <p><strong>Conclusion :</strong> em always take font-size from its parent, so by default for all browser
+        font-sizes is 16px means(1em) and box2's parent is box1 so it will be take font-size from box1.</p>
+
+</body>
+
+</html>

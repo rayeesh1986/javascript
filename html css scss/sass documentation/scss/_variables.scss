@@ -1,0 +1,20 @@
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #9ff1f1;
+$container-width:100%;
+
+
+
+@media (max-width:767px) {
+    select#policiesDocType {
+        margin-bottom: 15px;
+    }
+
+    input#policy_number {
+        width: 100%;
+    }
+
+    input#submit_search_id {
+        margin-top: 15px;
+    }
+}

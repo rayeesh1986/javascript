@@ -1,0 +1,27 @@
+@mixin bodRadius($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    -o-border-radius: $value;
+}
+
+@mixin textShadow($left:0px, $right:0px, $blur:0px, $color:transparent) {
+    text-shadow: $left $right $blur $color;
+    -webkit-text-shadow: $left $right $blur $color;
+    -moz-text-shadow: $left $right $blur $color;
+}
+
+@mixin boxShadow($left:0px, $right:0px, $blur:0px, $color:#fff) {
+    box-shadow: $left $right $blur $color;
+    -moz-box-shadow: $left $right $blur $color;
+    -webkit-box-shadow: $left $right $blur $color;
+}
+
+@mixin borderMixin($value:0px, $color:transparent) {
+    border: $value solid $color
+}
+
+@mixin borderMixin_2($value, $color) {
+    border: $value solid $color
+}

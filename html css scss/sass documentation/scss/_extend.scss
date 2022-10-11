@@ -1,0 +1,38 @@
+.abcd {
+    border: 3px solid #ccc;
+    background: blue;
+    width: 200px;
+    height: 300px;
+}
+
+
+/* placeholder */
+%height-data {
+    border: 5px solid #ccc;
+    background: yellow;
+
+}
+
+
+.cc {
+    @extend.abcd;
+    width: 300px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+
+.dd {
+    @extend .abcd;
+    @extend %height-data;
+    width: 300px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}

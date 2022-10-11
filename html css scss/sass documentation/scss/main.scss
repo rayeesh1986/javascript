@@ -1,0 +1,88 @@
+@import 'variables';
+@import 'mixin';
+@import 'extend';
+@import 'function';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $primary-color;
+    font-family: $font-stack;
+}
+
+
+.h1 {
+    color: $primary-color;
+    background: #333;
+    padding: 10px 15px;
+}
+
+.abc {
+    width: 300px;
+    height: 300px;
+    @include bodRadius(5px);
+    border: 1px solid #ccc;
+    margin: 10px auto;
+}
+
+
+.xyz {
+    width: 300px;
+    height: 300px;
+    @include bodRadius(50px);
+    @include boxShadow();
+    @include borderMixin(1px, rgba(0, 0, 0, .5));
+    margin: 10px auto;
+}
+
+.hij {
+    width: 300px;
+    height: 300px;
+    @include bodRadius(50px);
+    @include boxShadow(2px, 1px, 12px, rgba(0, 0, 0, .5));
+    margin: 10px auto;
+    background: #333;
+    @include borderMixin_2(3px, #fff)
+}
+
+.mno {
+    display: block;
+    @include bodRadius(15px);
+    @include boxShadow(2px, 1px, 12px, rgba(0, 0, 0, .5));
+    font-size: 40px;
+    color: #fff;
+    background: #333;
+    @include borderMixin_2(1px, #fff);
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+    @include textShadow(2px, 1px, 12px, rgba(255, 255, 255, .9));
+
+}
+
+
+/*
+
+quote()
+str-index()
+str-insert()
+str-length()
+str-slice()
+to-upper-case()
+to-lower-case()
+unique-id()
+unquote()
+*/
+
+.container_box {
+    width: setContainer($container-width, 12);
+}
+
+.container_box_2 {
+    width: setContainer($container-width, 4);
+}
