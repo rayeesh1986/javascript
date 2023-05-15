@@ -237,6 +237,24 @@
 
 
 
+        console.log("=================example 15========================");
+        let item = "2005";
+
+        function nameDD() {
+            if (true) {
+                var item2 = "2007";
+                let item3 = "2007";
+                console.log(item2, "item 2");
+                console.log(item3, "item 3");
+            }
+            console.log(item2, "2 -1")
+            // block scope outside show the reference error
+            //console.log(item3, "3 -1")
+        }
+        nameDD()
+        console.log(item)
+        console.log("=================example 15========================");
+
     </script>
 </body>
 

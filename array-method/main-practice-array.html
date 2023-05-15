@@ -18,8 +18,43 @@
     <h1>Practice</h1>
 
     <script>
+        // at, length, concat, join, sort, reverse, shift, unshift, isArray
+        // pop existing array me length ko change karta hai, and starting ki remove value ko kar deta hai
+        // push existing array me length ko change karta hai aur array ki lenth ko deta hai, and end me value ko add karta hai
+        // indexof ye value ke index ko batata hai
+        // lastIndexof ye last se value ke index ko batata hai
+        // includes
+        // some and every
+        // flat
 
+        // filter
+        // find & findIndex()
+        // map & reduce & reduceRight
+        // slice & splice
+        // tostring & valueof & fill 
 
+        let p1 = ["3", 5, 2, 4, 9, 3, 1, 7, 3];
+
+        let p2 = Array.isArray(p1)
+
+        /* function join_func(arr, j) {
+            let a = "";
+            for (var i = 0; i < arr.length; i++) {
+                a += arr[i];
+                if (arr.at(-1) == arr[i]) {
+                    a += "";
+                } else {
+                    a += j;
+                }
+            }
+            console.log(a)
+        }
+
+        const p2 = join_func(p1, "-") */
+
+        console.log(p2)
+
+        console.log("=============================+++++++++++++++++++++++++++++++++++++++++++++");
 
         let arr = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
         console.log("=================== at ================================")
@@ -94,7 +129,7 @@
 
         console.log("=================== indexOf & lastIndexOf ================================")
         const plants_3 = ['b', 'c', 'd', 'e', 'f', 'b', 'c', 'd', 'e', 'f'];
-        // ye vlue leta hai aur uske index ko batata hai and second parameter ye batata hai ki start kakhan se karna hai wo uske baane se element ko search karta hai 
+        // ye value leta hai aur uske index ko batata hai and second parameter ye batata hai ki start kakhan se karna hai wo uske baane se element ko search karta hai 
         let a10 = plants_3.indexOf("c", 2);
         console.log(a10)
 
@@ -110,7 +145,7 @@
         console.log(a12)
 
         console.log("=================== some & every ================================")
-        // ye ek callback function leta hai aur condintion check karte hai ki ek bhi condition true hoti hai ye true dega otherwise false dega
+        // ye ek callback function leta hai aur condition check karte hai ki ek bhi condition true hoti hai ye true dega otherwise false dega
         let a13 = arr.some((arr) => arr > 10);
         console.log(a13)
 
@@ -120,6 +155,7 @@
 
         console.log("=================== find & findIndex ================================")
         let array_find = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+        // ye array me condition ke through check karta hai aur first element ko return karta hai otherwise undefined return karta hai.
         // ye function array ki value ko find karte hai agar nhi milta means condition satisfy nahi hoti to undefined deta hai.
         let a15 = array_find.find((array) => array > 10);
         console.log(a15)
@@ -170,7 +206,7 @@
         // 
         const arr_s1 = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10];
         // arr.slice(start index, end index) and it returns a new array
-        const a23 = arr_s1.slice(4, 7) // slice(start => kahan se ndex start karna h, end => kahan tak index end karna h) ye ek new array bana degi
+        const a23 = arr_s1.slice(4, 7) // slice(start => kahan se index start karna h, end => kahan tak index end karna h) ye ek new array bana dega
         console.log(a23)
 
         const arr_sl1 = [0, 1, 2, 3, 45, 6, 77, 8, 9, 10,];

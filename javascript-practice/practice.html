@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box-container {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 50px;
+        }
+
+        .elemt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .element1 {
+            background-color: red;
+        }
+
+        .element2 {
+            background-color: green;
+        }
+
+        .element3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice js</h1>
+    <button class="btn-data" onclick="clearInterval(setInter)">clearInterval</button>
+    <div class="box-container">
+        <div class="elemt element1">
+            <div class="elemt element2">
+                <div class="elemt element3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // With strict mode, you can not, for example, use undeclared variables.                                                                                                                                                                                     
+        /* 'use strict';
+            vv = 10;
+            console.log(vv); 
+        */
+
+        /* 29-04-2023 */
+
+        const element1 = document.querySelector('.element1'),
+            element2 = document.querySelector('.element2'),
+            element3 = document.querySelector('.element3');
+
+        // by default it is going on event bubbling stage
+        /* element1.addEventListener('click', () => {
+            alert("clicked red bg")
+        });
+
+        element2.addEventListener('click', () => {
+            alert("clicked green bg")
+        });
+
+        element3.addEventListener('click', () => {
+            alert("clicked blue bg")
+        }); */
+
+        // this is reverse mode and it is going on event capturing stage
+        element1.addEventListener('click', () => {
+            alert("clicked red bg")
+        }, true);
+
+        element2.addEventListener('click', () => {
+            alert("clicked green bg")
+        }, true);
+
+        element3.addEventListener('click', () => {
+            alert("clicked blue bg")
+        }, true)
+
+
+
+        /* template literals */
+        var nameContianer = "hello world and value is";
+        const some = (a, b) => a * b;
+        const dataval = `${nameContianer} ${some(5, 6)}`;
+        console.log(dataval);
+
+        /* closure */
+
+        function closeFunc() {
+            let m = 10;
+            function innerClose() {
+                let p = m + 3;
+                console.log(p)
+            }
+            return innerClose;
+        }
+        console.dir(closeFunc());
+
+        console.log("=================example closure 1=====================");
+
+
+        let closeFunc2 = () => {
+            let m = 15;
+            let innerClose = () => {
+                let p = m + 3;
+                console.log(p)
+            }
+            return innerClose;
+        }
+        console.dir(closeFunc2());
+
+        console.log("=================example closure 2=====================");
+
+
+        let closeFunc3 = () => {
+            let m = 15;
+
+            let innerClose3 = () => {
+                let p = m++;
+                // console.log(p)
+                return p;
+            }
+            return innerClose3;
+        }
+
+        let inc = closeFunc3();
+        console.log(inc());
+        console.log(inc());
+        console.log(inc());
+        console.log(inc());
+        console.log(inc());
+        console.log(inc());
+        console.log("=================example closure 3=====================");
+
+
+        /* pure functions */
+
+        /* A Pure Function is a function (a block of code) that always returns the same result if the same arguments are
+        passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on
+        its input arguments */
+
+        function some_add(a, b) {
+            return a + b;
+        }
+
+        console.log(some_add(5, 6))
+
+
+        /* A “higher-order function” is a function that accepts functions as parameters and/or returns a function. */
+
+        let obj = [
+            { name: "Ritesh", class: "BA", age: 25 },
+            { name: "Rajesh", class: "BA", age: 26 },
+            { name: "Jhon", class: "BA", age: 65 },
+            { name: "Vivek", class: "BA", age: 35 },
+            { name: "Rakesh", class: "BA", age: 45 },
+        ]
+
+        let filterData = obj.filter((arr) => {
+            if (arr.age < 30) {
+                return arr;
+            }
+        });
+
+        console.log(filterData);
+
+        function someMethod(a, b) {
+            return a + b + 3
+        }
+
+        function otherCb(fn, a, b) {
+            return fn(a, b)
+        }
+
+        console.log(otherCb(someMethod, 5, 6));
+
+        console.log("=================example others=====================");
+
+
+        let setInter = setInterval(() => {
+            console.log("hi")
+        }, 1000);
+
+
+        //let clearInter = clearInterval(setInter);
+
+        /* Default Parameters */
+
+        /* example 1 */
+        function defaultPara(a, b = 10) {
+            return a + b;
+        }
+        console.log(defaultPara(6, 7));
+
+        /* example 2 */
+        function defaultPara_1(a, b = defaultPara_1()) {
+            return a + b;
+        }
+        console.log(defaultPara_1(6, 7));
+
+
+        /* Array destructuring &  Object Destructuring */
+        let newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6];
+        let [a1_1, a2_2, ...a3_3] = newArray;
+        console.log(a1_1);
+        console.log(a2_2);
+        console.log(...a3_3);
+        console.log(a3_3[0]);
+        console.log(a3_3[1]);
+        console.log(a3_3[2]);
+        console.log(a3_3[4]);
+        console.log(a3_3[5]);
+
+
+        let objDestructing = {
+            name: "Rayeesh",
+            classes: "BSC",
+            age: 34,
+            hobb: {
+                first: "cycling",
+                sec: "bike",
+                classn: {
+                    c: {
+                        course: "MBA"
+                    }
+                }
+            }
+        }
+
+        const { name, classes, age, hobb: { first: mm, classn: { c: { course: pp } } } } = objDestructing;
+        console.log(pp)
+
+        let { n1: z1, n2: z2, n3: z3, ...rest1 } = { n1: 2, n2: 4, n3: 6, n4: 10, n5: 15, n6: 17, n7: 19 };
+        console.log(z1);
+        console.log(z2);
+        console.log(z3);
+        console.log(rest1.n4);
+        console.log(rest1);
+        console.log("=======================================");
+
+        /* null coalescing */
+        const obj_1 = {
+            name: "John doe",
+            age: true
+        }
+        const getNull = obj_1.age ?? "Test Data";
+        console.log(getNull);
+
+        const obj_2 = {
+            name: "Jhon doe",
+            age: ""
+        }
+        let c_2 = obj_2.age || "Rajesh 2";
+        console.log(c_2);
+
+
+        /* async await start */
+        function abd() {
+            const t1 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("resolve")
+                }, 2000);
+            })
+            return t1;
+        }
+
+        let varData = async () => {
+            console.log("hi 1")
+            const b = await abd();
+            console.log(b)
+            console.log("hi")
+        }
+        // varData();
+
+        /* ============================================================ */
+
+        function a1() {
+            const t1 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("resolve");
+                    console.log("resolve 1")
+                }, 2000);
+            })
+            return t1
+        }
+
+        function a2() {
+            const t1 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("resolve")
+                    console.log("resolve 2")
+                }, 1000);
+            })
+            return t1
+        }
+
+        function a3() {
+            const t1 = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("resolve")
+                    console.log("resolve 3")
+                }, 500);
+            })
+            return t1;
+        }
+
+
+        let com = async () => {
+            let aa1 = await a1(),
+                aa2 = await a2(),
+                aa3 = await a3();
+
+        }
+
+        //  com();
+
+        /* async await end */
+
+
+        /* callback start */
+
+        /* normal function as callback */
+        function abc(name) {
+            console.log("hello 1 " + name)
+        }
+        function def(cb) {
+            const name = "hello world";
+            cb(name);
+        }
+        //  def(abc)
+
+
+        /* Arrow function as callback */
+        let c1 = (a, b) => {
+            return a * b
+        }
+        let c2 = (c1) => {
+            console.log(c1(4, 5));
+        }
+
+        // console.log(c1(4, 6))
+        // console.log(c2(c1))
+
+        /* callback end */
+
+
+
+        /* closure start */
+
+        function close() {
+            let a = 5;
+            function n() {
+                let c = a + 1;
+                console.log(c)
+
+                // return a++
+                // return +1 value in every function call
+            }
+            return n;
+        }
+
+        let abv = close();
+        /* console.log(abv())
+        console.log(abv())
+        console.log(abv()) */
+        // console.dir(close())
+
+        /* closure end */
+
+        /* DefaultParameters  start */
+
+        function acd(a, b = 5) {
+            return a * b
+        }
+        // console.log(acd(6))
+
+        function aaa(a, b) {
+            if (typeof b == "undefined") {
+                b = 7
+            }
+            return a * b
+        }
+        // console.log(aaa(6))
+
+        /* DefaultParameters  end */
+
+        /* console.warn(3 * 4)
+        console.warn(3 ** 4)
+        console.warn(10 ** -2)
+        console.warn(10 ** NaN)
+        console.warn(2 ** 3 ** 2)
+        console.warn(2 ** (3 ** 2))
+        console.warn(10 * -10) */
+
+    </script>
+</body>
+
+</html>

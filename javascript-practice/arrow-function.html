@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -17,7 +13,7 @@
 <body>
 
 
-    <h1>Arrow function</h1>
+    <h1>Arrow function & Substring</h1>
     <p>An arrow function expression is a compact alternative to a traditional function expression, but is limited and
         can't be used in all situations.</p>
 
@@ -33,51 +29,60 @@
     <script>
 
         // normal function
-        /* function x(a, b) {
+        function y(a, b) {
             return a + b;
         }
-        console.log(x(5, 5)) */
-
-
+        console.log(y(5, 6))
 
         // arrow function
-        // const x = (a, b) => a + b;
-        // console.log(x(5, 5));
+        const x = (a, b) => a + b;
+        console.log(x(5, 5));
 
 
-        /* console.log(this)
+        console.log("=========================Example 1=======================================");
 
-        this.ls = "Alam"
+        name = "vinod";
 
-        this.name = "Rayeesh";
-
-        console.log(this.name)
-        console.log(window.name)
-        console.log(name, ls)
-
-        console.log(innerHeight)
-
-
-        function checkThis() {
-            console.log(this)
+        function normalFunc() {
+            return this.name;
         }
 
-        checkThis(); */
-
+        const arrowFunc = () => {
+            return this.name;
+        }
 
         const person = {
-            checkOther: function () {
-                console.log(this)
-
-                function xxx() {
-                    console.log(this)
-                }
-
-                xxx()
-            }
+            name: "john",
+            age: 23,
+            normalFunc,
+            arrowFunc
+            /* 
+             normalFunc: function () { },
+            arrowFunc: () => { }
+            */
         }
 
-        person.checkOther()
+        console.log(person.normalFunc());
+
+        console.log(person.arrowFunc());
+
+        console.log("=========================Example 2=======================================");
+
+        // arrow function will not work in hosting because before declaration it will not work
+
+        function abc() {
+            console.log("hello world 1");
+        }
+
+        abc();
+
+        const cde = () => {
+            console.log("hello world 2");
+        }
+
+        cde();
+
+
 
 
 

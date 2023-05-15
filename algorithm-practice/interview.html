@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Practice</h1>
+    <script>
+        let arrVal = [
+            [1, 2],
+            [3, 4],
+            [],
+            [5, 77], [7, [8], 9],
+            [10, 11, 12, 13, 14, 15]
+        ];
+
+        const flatArr = (arr, len = arr.length) => {
+            var mm = [];
+            for (var i = 0; i < len; i++) {
+                var c = arr[i];
+                for (var b = 0; b < c.length; b++) {
+                    mm.push(c[b])
+                }
+            }
+            return mm;
+        }
+
+        console.log(flatArr(arrVal, 5))
+        // flat array with limit
+
+
+
+    </script>
+</body>
+
+</html>

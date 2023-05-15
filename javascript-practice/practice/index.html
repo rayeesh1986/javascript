@@ -1,0 +1,429 @@
+<html>
+
+<head>
+    <title>Ecma script Tutorial</title>
+</head>
+
+<body>
+    <h1>Javascript Practice</h1>
+
+
+    <script>
+        // With strict mode, you can not, for example, use undeclared variables.                                                                                     
+        /* 'use strict';
+            vv = 10;
+            console.log(vv); 
+        */
+    </script>
+    <!-- =============== module =================== -->
+    <!-- example 1 -->
+    <script type="module" src="./file2.js"></script>
+    <!-- example 2 -->
+    <script type="module">
+        import n, { summ, minn } from './file3.js'
+        console.log(n("John", "Doe"), "module 0");
+        console.log(summ(6), "module 1")
+        console.log(minn(3), "module 2")
+    </script>
+    <!-- =============== template literals =================== -->
+    <script>
+        var nameContianer = "hello world and value is";
+        const some = (a, b) => a * b;
+        const dataval = `${nameContianer} ${some(5, 6)}`;
+        console.log(dataval, "template literals");
+    </script>
+
+    <!-- =============== pure functions =================== -->
+    <script>
+        /* A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on
+        its input arguments */
+
+        function some_add(a, b) {
+            return a + b;
+        }
+        console.log(some_add(5, 6), "Pure function")
+    </script>
+
+    <!-- =============== Closure =================== -->
+    <script>
+        function closeFunc() {
+            let m = 10;
+            function innerClose1() {
+                let p = m + 3;
+                console.log(p, "closure result ex-1")
+            }
+            return innerClose1;
+        }
+        console.dir(closeFunc());
+
+        let closeFunc2 = () => {
+            let m = 15;
+            let innerClose = () => {
+                let p = m++;
+                return p;
+            }
+            return innerClose;
+        }
+
+        let c1 = closeFunc2();
+
+        console.log(c1(), "closure result 1")
+        console.log(c1(), "closure result 2")
+        console.log(c1(), "closure result 3")
+        console.log(c1(), "closure result 4")
+        console.log(c1(), "closure result 5")
+
+    </script>
+
+    <!-- =============== High order function =================== -->
+    <script>
+        /* A “higher-order function” is a function that accepts functions as parameters and/or returns a function. */
+
+        let obj = [
+            { name: "Ritesh", class: "BA", age: 25 },
+            { name: "Rajesh", class: "BA", age: 26 },
+            { name: "Jhon", class: "BA", age: 65 },
+            { name: "Vivek", class: "BA", age: 35 },
+            { name: "Rakesh", class: "BA", age: 45 },
+        ]
+
+        let filterData = obj.filter((arr) => {
+            if (arr.age < 30) {
+                return arr;
+            }
+        });
+
+        console.log(filterData, "High order function ex-1");
+
+        function someMethod(a, b) {
+            return a + b + 3
+        }
+        function otherCb(fn, a, b) {
+            return fn(a, b)
+        }
+
+        console.log(otherCb(someMethod, 5, 6), "High order function ex-2");
+    </script>
+
+    <!-- =============== Callback function =================== -->
+    <script>
+        function dataSum(a, b) {
+            return a + b
+        }
+
+        function resultData(fn, a, b) {
+            return fn(a, b)
+        }
+
+        console.log(resultData(dataSum, 5, 600), "callback function")
+    </script>
+
+    <!-- =============== Default Parameters =================== -->
+    <script>
+
+        /* example 1 */
+        function defaultPara(a, b = 10) {
+            return a + b;
+        }
+        console.log(defaultPara(6, 7));
+
+        /* example 2 */
+        function defaultPara_1(a, b = defaultPara_1()) {
+            return a + b;
+        }
+        console.log(defaultPara_1(6, 7));
+    </script>
+
+    <!-- =============== JavaScript primitive data types =================== -->
+
+    <script>
+        console.log(`String, Number, Boolean, Undefined, Null`, "(Primitive data types)")
+        console.log(`Object, Array, RegExp`, "(Non-Primitive data types)")
+    </script>
+
+    <!-- =============== Array destructuring & Object Destructuring  =================== -->
+    <script>
+        /* Array destructuring &  Object Destructuring */
+        let newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6];
+        let [a1_1, a2_2, ...a3_3] = newArray;
+        console.log(a1_1);
+        console.log(a2_2);
+        console.log(...a3_3);
+        console.log(a3_3[0]);
+        console.log(a3_3[1]);
+        console.log(a3_3[2]);
+        console.log(a3_3[4]);
+        console.log(a3_3[5]);
+
+
+        let objDestructing = {
+            name: "Rayeesh",
+            classes: "BSC",
+            age: 34,
+            hobb: {
+                first: "cycling",
+                sec: "bike",
+                classn: {
+                    c: {
+                        course: "MBA"
+                    }
+                }
+            }
+        }
+
+        const { name, classes, age, hobb: { first: mm, classn: { c: { course: pp } } } } = objDestructing;
+        console.log(pp)
+
+        let { n1: z1, n2: z2, n3: z3, ...rest1 } = { n1: 2, n2: 4, n3: 6, n4: 10, n5: 15, n6: 17, n7: 19 };
+        console.log(z1);
+        console.log(z2);
+        console.log(z3);
+        console.log(rest1.n4);
+        console.log(rest1);
+        console.log("=======================================");
+
+        /* array destructuring swap value*/
+        let a;
+        let b;
+
+        [a, b] = [1, 2, 3];
+
+        console.log(a, "array destructuring swap value 1"); // => 1
+        console.log(b, "array destructuring swap value 2"); // => 2
+
+        [a, b] = [b, a];
+
+        console.log(a, "array destructuring swap value 2"); // => 2
+        console.log(b, "array destructuring swap value 1"); // => 1
+
+        /* example 2 */
+        function ad2() {
+            let a = 1;
+            let b = 2;
+            let temp;
+
+            temp = a;
+            a = b;
+            b = temp;
+
+            console.log(a, "Example 2 array destructuring swap value 2"); // => 2
+            console.log(b, "Example 2 array destructuring swap value 1"); // => 1
+        }
+        ad2()
+    </script>
+
+    <!-- =============== null coalescing  =================== -->
+    <script>
+        const obj_1 = {
+            name: "John doe",
+            age: true
+        }
+        const getNull = obj_1.age ?? "Test Data";
+        console.log(getNull);
+
+        const obj_2 = {
+            name: "Jhon doe",
+            age: ""
+        }
+        let c_2 = obj_2.age || "Rajesh 2";
+        console.log(c_2);
+    </script>
+
+    <!-- =============== Option chain  =================== -->
+    <script>
+        const obj1 = {
+            name: "Jhon Doe",
+            age: 25,
+            education: {
+                class: "MBA",
+                rollNo: 21
+            }
+        }
+
+        // by default value object me na milne pe undefined ki error aati h isse bachne ke liye isko use karte hai
+
+        //let getObj = obj.education.name.value;
+        // console.log(getObj);
+
+
+        // ye object me value na milne pe error se banchata hai
+        let getValue = obj1?.education?.class;
+        let getValue1 = obj1?.dd?.();
+        console.log(getValue)
+        console.log(getValue1)
+    </script>
+
+    <!-- =============== Shallow copy vs Deep copy (or we can use new method structuredClone() )  =================== -->
+    <script>
+
+
+        let obj_11 = {
+            name: "Ashok Kumar",
+            degree: "MBA",
+            roll: "25"
+        }
+
+        console.log(obj_11.name);
+        let obj_12 = { ...obj_11 };
+        obj_12.name = "Rayeesh";
+        console.log(obj_11.name) // it is allocating same memory;
+        console.log(obj_12.name) // it is allocating same memory;
+
+        let a_1 = [1, 2, 3, 4, 5];
+        let b_1 = [...a_1];
+        b_1[0] = 88;
+        console.log(a_1, "normal object");
+        console.log(b_1, "with rest operator object");
+
+        // Note: shallow copy me reference obj ke nested object ke sath sath wo main object ko bhi change karta hai isliye shallow copy me nested object ko use nahi karte uske liye deep copy ka use karte hai.
+
+        // shallow copy use for single level reference copy the object
+
+        //Object.assign(targetObject, sourceObject)
+        let obj3 = Object.assign({ city: "Delhi", degree: "BTech" }, obj1)
+        console.log(obj3)
+
+        let bb = {
+            name: "Rayeesh Alam",
+            degree: "BCA",
+            classes: {
+                high: "2004",
+                inter: "2006",
+                graduation: {
+                    ba: "2008",
+                    ma: "2011"
+                }
+            }
+        }
+
+        // deep copy reference object example 1
+        let c = structuredClone(bb)
+        console.log(bb.classes.graduation)
+        c.classes.graduation.ba = "2023";
+        console.log(c.classes.graduation, "deep copy reference object example 1")
+
+        // deep copy reference object example 2
+        let ee = JSON.stringify(bb);
+        let ff = JSON.parse(ee);
+
+        console.log(bb, "deep copy normal object")
+        ff.classes.high = "2034"
+        console.log(ff, "deep copy reference object example 2")
+
+    </script>
+
+    <!-- ===============  let var const  =================== -->
+    <script>
+        var aa1 = "china";
+        function cc1() {
+            aa1 = "india";
+            if (aa1) {
+                aa1 = "nepal"
+                console.log(aa1);
+                let bb1 = "pakistan";
+                console.log(bb1);
+            }
+            // show for let reference error because of block scope
+            //console.log(bb1);
+            console.log(aa1);
+        }
+        cc1();
+        aa1 = "bhutan";
+        console.log(window);
+    </script>
+
+
+    <!-- ===============  Recursion  =================== -->
+    <script>
+        function recursion(a, b) {
+            if (b == 1) {
+                return a;
+            } else {
+                return a * recursion(a, b - 1)
+            }
+        }
+        console.log(recursion(2, 5), "recursion");
+    </script>
+
+    <!-- =============== async, await, Promise, finally, all, race, allSettled, any  =================== -->
+
+    <script>
+        console.log("===============Promise====================")
+        let n_promise = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                    console.log("result here resolve 1");
+                }, 4000);
+            }).then((data) => {
+                console.log(data, "result here then 1");
+            }).catch((error) => {
+                console.log(error, "error result here 1");
+            })
+        }
+        let m_promise = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                    console.log("result here resolve 2");
+                }, 200);
+            }).then((data) => {
+                console.log(data, "result here then 2");
+            }).catch((error) => {
+                console.log(error, "error result here 2");
+            })
+        }
+
+        let asd = async () => {
+            console.log("message 1")
+            let nb = await n_promise();
+            console.log("message 2")
+            let mb = await m_promise();
+            console.log("message 5")
+        }
+
+        console.log(asd())
+        console.log("===============Promise====================")
+    </script>
+
+
+    <!-- ===============  Switch, try catch=================== -->
+
+    <script>
+
+        console.log("<!-- ===============  Switch, try catch=================== -->")
+        function switchCase() {
+            let day = new Date().getDay();
+            let data;
+            switch (day) {
+                case 0:
+                    data = `Sunday 1, ${day} + 1`;
+                    break;
+                case 1:
+                    data = "Monday";
+                    break;
+                case 2:
+                    data = "Tuesday";
+                    break;
+                case 3:
+                    data = "Wednesday";
+                    break;
+                case 4:
+                    data = "Thursday";
+                    break;
+                case 5:
+                    data = "Friday";
+                    break;
+                case 6:
+                    data = "Saturday";
+            }
+
+            return data;
+        }
+
+        console.log(switchCase())
+        console.log("<!-- ===============  Switch, try catch=================== -->")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    /*
+      // this is example for stoppropagation and stopImmediatePropagation method
+      $(document).ready(function () {
+          $("span").click(function (event) {
+              alert("The span element was clicked.");
+          });
+          $("p").click(function (event) {
+            //event.stopPropagation();
+            event.stopImmediatePropagation();
+            alert("The p element was clicked.");
+          });
+          $("div").click(function () {
+            alert("The div element was clicked.");
+          });
+          $("p").click(function(event) {
+            // This function won't be executed
+            $(this).css("background-color", "#f00");
+          });
+      }); 
+    */
+  </script>
+</head>
+
+<body>
+
+  <h1>stoppropagation, stopimmediatepropagation, isPropagationStopped, event capturing and event bubbling in javascript
+  </h1>
+
+  <p>stopPropagation will prevent any parent handlers from being executed</p>
+  <p>stopImmediatePropagation will prevent any parent handlers and also any other handlers from executing</p>
+
+  <p>stopPropagation will prevent any parent handlers from being executed stopImmediatePropagation will prevent any
+    parent handlers and also any other handlers from executing</p>
+
+  <pre>stoppropagation</pre>
+  <div class="a1" style="height:100px;width:500px;padding:10px;border:1px solid blue;background-color:lightblue;">This
+    is a div
+    element.<p class="a2" style="background-color:pink">This is a p element, in the div element. <br><span class="a3"
+        style="background-color:orange">This is a span element in the p and the div element.</span></p>
+  </div>
+
+  <script>
+    // this is event capturing method
+    const f1 = document.querySelector('.a1');
+    const f2 = document.querySelector('.a2');
+    const f3 = document.querySelector('.a3');
+
+    f1.addEventListener('click', function () {
+      alert("div called")
+    }, true)
+
+    f2.addEventListener('click', function () {
+      alert("p called")
+    }, true)
+
+    f3.addEventListener('click', function () {
+      alert("span called")
+    }, true)
+
+
+    /*
+     // this is event bubbling method
+    f1.addEventListener('click', function () {
+      alert("div called")
+    })
+
+    f2.addEventListener('click', function () {
+      alert("p called")
+    })
+
+    f3.addEventListener('click', function () {
+      alert("span called")
+    })
+
+    */
+
+
+  </script>
+  <!-- ========================================================================== -->
+
+  <pre>isPropagationStopped : ye check karta hai function me stoppropagation laga h ki nahi to ye true or false return karta h</pre>
+  <p class="p1">test</p>
+
+  <script>
+    // this is event isPropagationStopped method
+    $(document).ready(function () {
+      $(".p1").click(function (e) {
+        e.stopPropagation();
+        alert("hi " + e.isPropagationStopped())
+
+      })
+    })
+  </script>
+</body>
+
+</html>

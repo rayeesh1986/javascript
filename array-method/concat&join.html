@@ -5,27 +5,24 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
 
-    <body>
-        <!--[if lt IE 7]>
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
 
-        <h1>Concat</h1>
-        sdfdsf
+    <h1>Concat</h1>
 
-
-        dfdsf
-        <pre>
+    <pre>
         let a = ["css", "html", "php", "js", "phyton"];
         let b = ["css", "html", "php", "js", "phyton"];
         let c = ["css", "html", "php", "js", "phyton"];
@@ -40,13 +37,13 @@
     </pre>
 
 
-        <h1>Join</h1>
+    <h1>Join</h1>
 
 
 
 
 
-        <pre>
+    <pre>
              const elements = ['Fire', 'Air', 'Water'];
 
         console.log(elements.join());
@@ -62,39 +59,39 @@
         If the array has only one item, then that item will be returned without using the separator.
     </pre>
 
-        <script>
+    <script>
 
-            // concat array example start 
-            let a = ["css", "html", "php", "js", "phyton"];
-            let b = ["css", "html", "php", "js", "phyton"];
-            let c = ["css", "html", "php", "js", "phyton"];
-            let d = ["css", "html", "php", "js", "phyton"];
-            let e = ["css", "html", "php", "js", "phyton"];
+        // concat array example start 
+        let a = ["css", "html", "php", "js", "phyton"];
+        let b = ["css", "html", "php", "js", "phyton"];
+        let c = ["css", "html", "php", "js", "phyton"];
+        let d = ["css", "html", "php", "js", "phyton"];
+        let e = ["css", "html", "php", "js", "phyton"];
 
-            let f = a.concat(b, c, d, e);
-            console.log(f);
-            // concat end
-
-
-            // merege two or more array in a single array use spread operator.
-            let ss = [...a, ...b, ...c, ...d, ...e]
-            console.log(ss)
+        let f = a.concat(b, c, d, e);
+        console.log(f);
+        // concat end
 
 
-            // join array example start 
-            const elements = ['Fire', 'Air', 'Water'];
+        // merege two or more array in a single array use spread operator.
+        let ss = [...a, ...b, ...c, ...d, ...e]
+        console.log(ss)
 
-            console.log(elements.join());
-            // expected output: "Fire,Air,Water"
 
-            console.log(elements.join(''));
-            // expected output: "FireAirWater"
+        // join array example start 
+        const elements = ['Fire', 'Air', 'Water'];
 
-            console.log(elements.join('-'));
+        console.log(elements.join());
+        // expected output: "Fire,Air,Water"
+
+        console.log(elements.join(''));
+        // expected output: "FireAirWater"
+
+        console.log(elements.join('-'));
         // expected output: "Fire-Air-Water"
         // join end
 
-        </script>
-    </body>
+    </script>
+</body>
 
 </html>

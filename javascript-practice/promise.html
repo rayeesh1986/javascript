@@ -153,6 +153,19 @@
         //p_final()
 
 
+        // Promise.all,  Promise.allSettled,  Promise.race, Promise.any
+
+        console.log("===================================")
+        const dd = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([1, 2, 3, 4, 5, 0, 8, 9, 0]);
+            }, 1000)
+        }).then((data) => {
+            console.log("Data", data)
+        }).catch((error) => {
+            console.log("Error", error)
+        });
+        console.log("===================================")
 
 
 

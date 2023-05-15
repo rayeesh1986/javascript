@@ -5,4 +5,4 @@ let division = (a, b) => a / b;
 let modules = (a, b) => a % b;
 
 export default sum;
-export { minus, multiplication as multi, division, modules };
+export { minus as min, multiplication as multi, division, modules };
